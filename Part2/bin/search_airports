@@ -1,4 +1,4 @@
-#!/usr/bin/perl -Ilib
+#!/opt/xt/xt-perl/bin/perl -Ilib
 
 use strict;
 use warnings;
