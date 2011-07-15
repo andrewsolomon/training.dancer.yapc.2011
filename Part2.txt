@@ -1,0 +1,191 @@
+Implementing a Model View Controller Web application
+====================================================
+
+The project of this section is to write a website a single page
+of the format:
+http://localhost:3000/
+===================================================
+Search for airports matching [ ..... ]
+{{Submit}}
+===================================================
+
+enter Sydney and the page will look like this
+
+http://localhost:3000/results?searchstring=Sydney
+===================================================
+Search for airports matching [Sydney]
+
+{{Submit}}
+
+[found 3 airports from 2948324]
+
+* Sydney / J.A. Douglas McCurdy Airport, CA
+* Sydney Bankstown Airport, AU
+* Sydney Kingsford Smith International Airport, AU
+===================================================
+
+It will be similar to the elementary website we just developed, but because it is larger and more complex we will
+need to give it more structure, separating things out a bit more
+so that the code is easy to understand and maintain.
+
+The structure we use in this section is the Model-View-Controller (MVC)
+framework. A model is the code which access and manipulates the data. The view
+is (in our case) the html/template toolkit files to dictate
+how the output is presented to the user.
+The controller is the code which connects a url with a view,
+and uses a module to populate a view with the appropriate data.
+
+
+1. Implement the skeleton described below.
+
+The following code is a skeleton on which you'll be building
+the website. Save these files in the specified locations
+and complete the template so that it the site runs without errors.
+
+A) The script: findairport/wsa
+
+This is surprisingly minimal, but we're putting
+all the route handlers into Airport::Controller
+and the 'set' calls are being replaced with 
+the contents of the config file
+
+===================
+#!/usr/bin/perl
+
+use Dancer;
+use Airport::Controller;
+
+
+Dancer->dance;
+
+===================
+
+B) The config file: findairport/config.yml
+
+Instead of having some 'set' calls in the perl code
+we're doing it all in one place.
+
+================================== findairport/config.yml
+
+template: 'template_toolkit'
+
+engines:
+  template_toolkit:
+    start_tag: '[%'
+    stop_tag: '%]'
+
+logger: 'console'
+log: 'debug'
+show_errors: 1
+
+===================================
+
+
+C) The handlers module lib/Airport/Controller.pm
+
+=================================
+package Airport::Controller;
+use Dancer;
+
+
+get '/' => sub {
+  template 'index';
+};
+
+get '/results' => sub {
+  my $searchstring = params->{searchstring};
+  template 'index' => {
+    searchstring => $searchstring,
+    searchresults => [
+      { name => 'Kentucky Fried Airport', iso_country => 'Kentucky' },
+      { name => 'McAirport', iso_country => 'United State of Texas' },
+    ],
+
+  };
+};
+
+1;
+==================================
+
+D) views/index.tt
+
+----------------------------
+<html>
+<head><title>Find an Airport</title></head>
+<body>
+  <h1>Find an Airport</h1>
+
+<form action="results" method="get">
+  <input type="text" name="searchstring" value="[%searchstring%]"/><br />
+  <input type="submit" value="Submit" />
+</form>
+
+[% IF searchresults %]
+<h2> Search Result </h2>
+<table>
+<tr><td><b>Name</b></td><td><b>Country</b></td></tr>
+
+-----> ADD THE FOREACH LOOP TO FILL IN COLUMNS HERE
+
+</table>
+[% END %]
+
+
+</body>
+</html>
+---------------------
+
+Note: wsa has to be in the directory containing the 'views' and 'lib' 
+subdirectories and the config.yml
+otherwise it needs to be told where to look for them.
+
+[Marking: 
+- make sure the files all sit in the right places.
+- grep the config file for various things
+- make sure the thing runs as expected
+]
+
+
+
+2. Edit Airport::Controller so that it loads the array of 
+airports generated with Airport::Data::parse_airports 
+into a package variable which will be used in 
+the proper search function.
+
+Note - this variable should be declared outside a subroutine so it is 
+only called the first time the /results route handler is
+called rather than every time we do a search.
+
+Add the number of airports line to the top of the index/results page
+as in the example screenshots above.
+
+Hint: Due to the config settings above, the filename to 
+pass into Airport::Data::parse_airports is (setting('airports_csv')
+
+
+
+3. Instead of just write 'Found 3 airports from 6372' just
+below the search result it would be more informative to say
+'Found 3 airports from 6372 - searching by location'
+or
+'Found 3 airports from 6372 - searching by name'
+
+Using Airport::Data::parse_search_string decide which method
+is appropriate depending on the user's input and add that to
+the statement above.
+
+
+4. Now use Airport::Search get_name_matching_airports 
+or get_latlong_matching_airports to populate the 
+searchresults with the correct data.
+
+
+5. Make the search get_name_matching_airports case insensitive
+and update its test script accordingly
+
+
+6. For each airport, if it has a home_link, make it a link when
+you click on the airport name.
+
+7. Place another link to the right of each link to get the airports
+near this one (1 degree circumference)
