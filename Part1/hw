@@ -1,4 +1,4 @@
-#!/opt/xt/xt-perl/bin/perl
+#!/bin/env perl
 use Dancer;
 use DateTime;
 
