@@ -1,5 +1,6 @@
-#!/opt/xt/xt-perl/bin/perl
+#!/bin/env perl
 use Dancer;
+use DateTime;
 
 set logger => 'console';
 set log => 'debug';
@@ -11,6 +12,12 @@ get '/', sub {
 
 get '/hello' => sub {
     return "<h1>Hello Things!</h1>";
+};
+
+get '/time' => sub {
+    my $now = DateTime->now();
+
+    return "<p>Hello World, the time is now " . $now->hour .':'. $now->minute. "</p>";
 };
 
 Dancer->dance;

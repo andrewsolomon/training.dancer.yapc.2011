@@ -4,7 +4,7 @@ Elementary Web Application
 Concepts:
 - Route handler - the mapping of a path to a subroutine
 - Route types:
-    1.  /link/:like/:this where all the data is in the url but not a GET
+    1. /link/:like/:this where all the data is in the url but not a GET
     2. GET query 
     3. POST query
 
@@ -19,18 +19,19 @@ will do some data mining and generate a new page on the fly.
 That's a 'Web Application' and this class will take you through
 putting together a web application.
 
-Create the following script hw
+
+Exercise 1
+===========
+Create the script part1/ex1/step1.pl
 
 ====
-
 #!/usr/bin/perl
 
 use Dancer;
 
-set logger => 'console';
-set log => 'debug';
+set logger  => 'console';
+set log     => 'debug';
 set show_errors => 1;
-
 
 get '/' => sub {
     return "Hello World!";
@@ -39,67 +40,110 @@ get '/' => sub {
 Dancer->dance;
 
 ====
-
-run it, and see what happens when you visit it with your browser.
-Note - it will tell you something like:
+running it at the command line you should get something like:
 ===
 $ ./hw
 >> Dancer server 11757 listening on http://0.0.0.0:3000
 ===
-If 0.0.0.0 doesn't work, try localhost.
+
+See what happens when you visit the url with your browser.
+If this doesn't work, replace '0.0.0.0' with 'localhost' or the IP address
+of the machine you're working on.
 
 
 Things to note about the code:
-* use Dancer brings along 'use strict' and 'use warnings' so 
+* 'use Dancer' brings along 'use strict' and 'use warnings' so 
 we don't need to type them.
-* The three 
-  set logger => 'console';
-  set log => 'debug';
+* The three settings
+  set logger    => 'console';
+  set log       => 'debug';
   set show_errors => 1;
 are telling it to keep you informed of what the problem is when
 you're coding to make sure you get as much information as possible.
 You'll want to log errors to a file once it's a public website.
 * get '/' => sub {} 
-is calling subroutine 'get' using => for a key-value pair, 
-the key being the string '/'
-and the value being the subroutine. This could also be written
-get('/', sub {})
-which tells the Dancer package, 
-"when someone calls the website at '/' - give them the output of the
-second argument which is a subroutine.
+says, on an HTTP GET request, call the subroutine on the right 
+of the arrow to generate the content of the page to be displayed.
 * Dancer->dance ;
-This is an example of a method call as we learnt in the last chapter
+This is an example of a method call on an object. To use Moose we don't
+need to understand how to develop Perl objects - we just need to get a
+feel for how to use them.
 
-Exercise1: Change the output to be  a bit prettier
-<h1> Hello World </h1>
 
+In part1/ex1/step1.pl these commands would have looked a bit
+suspicious to the Perl newbie:
+
+set logger    => 'console';
+get '/' => sub {
+    return "Hello World!";
+};
+
+This is just a bit of Perl cosmetics to change the focus of 
+the reader from the subroutine being called, to its arguments.
+
+The first of these could just as well have been written
+
+set('logger', 'console');
+
+Rewrite the whole script in this way and save it as 
+
+part1/ex1/step1-back.pl
+
+
+Hint: to understand the get's second argument set
+
+my $hwsub = sub {
+    return "Hello World!";
+};
+
+before calling 'get' on it.
+
+========================
+
+
+Copy part1/ex1/step1.pl to part1/ex1/step2-forward.pl
+
+and change the output to be a bit prettier using HTML tags.
+
+<h1>Hello World!</h1>
+================================================================
 
 Exercise 2: 
 
-Edit hw to create another web page for the url
-http://localhost:3000/hello
-which returns '<h1>Hello Things!</h1>'
+Copy part1/ex1/step2-forward.pl to Copy part1/ex2/step1.pl
 
-Hint: Instead of get's first argument being '/' it should be '/hello'
+and create another web page for the url
+    http://localhost:3000/hello
+which returns '<h1>Turn it all around!</h1>'
 
+Hint: Instead of get's first argument as '/' it should be '/hello'
+
+=================================================================
 
 Exercise 3: Non-static pages
 
 We've shown how to write static pages, but that's no better
 than plain HTML. 
 
-Write a page /time in the hw package which shows not just Hello World, but also
+Copy part1/ex1/step2-forward.pl to part1/ex3/step1.pl
+and add a new route handler which shows not just 'Hello World', but also
 the time.
 
 http://localhost:3000/time
 
-prints 
 'Hello world, the time is now 2002-12-06 14:02:29'
 
 Hint: Another object oriented module to use - calculate the time using the
  DateTime module, it's 'now' creation method, and  its 'ymd' and 'hms' methods.
+
 First of all:
 $ perldoc DateTime
+
+=================================================================
+
+FIXME: AS UPTO HERE 
+
+===========================
 
 Exercise 4: Template Toolkit
 
