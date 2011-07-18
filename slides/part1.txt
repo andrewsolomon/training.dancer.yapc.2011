@@ -1,0 +1,406 @@
+Elementary Web Application
+===========================
+
+Concepts:
+- Route handler - the mapping of a path to a subroutine
+- Route types:
+    1.  /link/:like/:this where all the data is in the url but not a GET
+    2. GET query 
+    3. POST query
+
+
+We assume you've done a static website. A simple HTML page.
+The only active part of a static website is a link to
+take you from one static page to another.
+Eg. <a href="http://www.google.com">Google</a>
+
+More interesting is our website where clicking on a button
+will do some data mining and generate a new page on the fly.
+That's a 'Web Application' and this class will take you through
+putting together a web application.
+
+Create the following script hw
+
+====
+
+#!/usr/bin/perl
+
+use Dancer;
+
+set logger => 'console';
+set log => 'debug';
+set show_errors => 1;
+
+
+get '/' => sub {
+    return "Hello World!";
+};
+
+Dancer->dance;
+
+====
+
+run it, and see what happens when you visit it with your browser.
+Note - it will tell you something like:
+===
+$ ./hw
+>> Dancer server 11757 listening on http://0.0.0.0:3000
+===
+If 0.0.0.0 doesn't work, try localhost.
+
+
+Things to note about the code:
+* use Dancer brings along 'use strict' and 'use warnings' so 
+we don't need to type them.
+* The three 
+  set logger => 'console';
+  set log => 'debug';
+  set show_errors => 1;
+are telling it to keep you informed of what the problem is when
+you're coding to make sure you get as much information as possible.
+You'll want to log errors to a file once it's a public website.
+* get '/' => sub {} 
+is calling subroutine 'get' using => for a key-value pair, 
+the key being the string '/'
+and the value being the subroutine. This could also be written
+get('/', sub {})
+which tells the Dancer package, 
+"when someone calls the website at '/' - give them the output of the
+second argument which is a subroutine.
+* Dancer->dance ;
+This is an example of a method call as we learnt in the last chapter
+
+Exercise1: Change the output to be  a bit prettier
+<h1> Hello World </h1>
+
+
+Exercise 2: 
+
+Edit hw to create another web page for the url
+http://localhost:3000/hello
+which returns '<h1>Hello Things!</h1>'
+
+Hint: Instead of get's first argument being '/' it should be '/hello'
+
+
+Exercise 3: Non-static pages
+
+We've shown how to write static pages, but that's no better
+than plain HTML. 
+
+Write a page /time in the hw package which shows not just Hello World, but also
+the time.
+
+http://localhost:3000/time
+
+prints 
+'Hello world, the time is now 2002-12-06 14:02:29'
+
+Hint: Another object oriented module to use - calculate the time using the
+ DateTime module, it's 'now' creation method, and  its 'ymd' and 'hms' methods.
+First of all:
+$ perldoc DateTime
+
+Exercise 4: Template Toolkit
+
+Now from the previous exercise you are generating HTML from 
+within a subroutine. For a small and simple HTML file that's ok, but
+if it gets any bigger it will be very difficult to read the 
+hw script picking out the html from the perl or vice versa.
+
+This is what Template Toolkit is for - you can separate out the 
+HTML into a different file with tags <% date %> and <% time %>
+which will be filled in by these variables.
+
+Do the same thing but separate out the HTML and present the
+time using <%Template Toolkit%>
+
+* create a file config.yml containing 
+
+----
+template: template_toolkit
+
+engines:
+  template_toolkit:
+    start_tag: '[%'
+    stop_tag: '%]'
+
+------
+indented exactly as shown above. This brings in a large perl module
+for rendering HTML pages (among other things).
+
+* Create a directory views
+views
+
+* add a file views/time.tt 
+containing the line
+<h1>Hello world, the time is now [% date %] [% time %]</h1>
+
+* Add a new route-handler /tt-time in hw
+===
+get '/tt-time' => sub {
+    my $now = DateTime->now();
+
+    template 'time' => { time => $now->hms, date => $now->ymd };
+};
+===
+Run it and make sure it works.
+The things to note about this:
+- 'template 'time'' means 'look for time.tt in the views directory
+- the hash ref  { time => $now->hms, date => $now->ymd } says
+'Whenever you see [% time %] replace it with $now->hms and
+whenever you see [% date %] replace it with  $now->ymd 
+
+[Show the class what happens when you swap the order of the configs
+and explain quickly why the bug happens]
+
+Exercise 5. Dynamic content 1: parameterised base url
+
+Add a /hello-adj-par route handler to take another parameter.
+
+That is, instead of writing 
+get '/hello-adj-par' => sub {}
+we write 
+get '/hello-adj-par/:adjective' => sub {}
+
+Then within the associated subroutine, the variable
+params->{adjective} will be the string after thing (noting that
+params is a method returning a hashref of all the parameters)
+
+Therefore, we can change 
+  return "<h1>Hello Things!</h1>";
+to     
+  return "<h1>Hello ".params->{adjective} ." Things!</h1>";
+
+if we then navigate to the page: 
+  http://10.1.1.5:3000/hello-adj-par/funny
+
+or 
+  http://10.1.1.5:3000/hello-adj-par/interesting
+
+Implement this and see that it works.
+
+This technique is great for auto-generated urls which might populate
+a site-map for search engines to explore your website. What's more,
+it's much prettier as a url than the two other approaches below.
+
+Exercise 6. Dynamic Content 2: GET query 
+
+Exercise 5 shows how we can use paramaterised urls for generating content,
+but this is not the way for implementing pages which take their parameters
+from human input. You don't want them to have to type their name into the
+url.  It would be easier for them to type it into a field in a web page.
+
+The two approaches for implementing this are the GET and POST type forms.  
+The first thing we need to implement (A) is a page which takes the user's 
+adjective input.  The second (B) is a page to display the output.
+
+A) Create a new file views/hello-adj-index.tt containing
+
+-----
+<h1>GET form for accessing the hello-adj-get method</h1>
+<form action="hello-adj-get" method="get">
+  Adjective: <input type="text" name="adjective" /><br />
+  <input type="submit" value="Submit" />
+</form>
+-----
+
+In hw, add a '/hello-adj-index' method
+
+-----------
+
+get '/hello-adj-index' => sub {
+  template 'hello-adj-index';
+};
+-------
+
+B) In hw add a method for /hello-adj
+
+----------
+
+get '/hello-adj' => sub {
+  my $params = params();
+    return
+  "<h1>Hello ".params->{adjective}." Things!</h1>".
+};
+--------
+
+Run it and see that if you visit the website at 
+
+http://localhost:3000/hello-adj-index
+and enter a name like 'dynamic' and click submit, it will 
+display the page 
+http://10.1.1.5:3000/hello-adj?adjective=dynamic
+and say 'Hello dynamic Things!'
+
+Exercise 7. Dynamic content 3: POST query 
+
+You've just done two experiments with dynamically generating content of the
+web page based on information the user provided. In both cases, this
+information wound up in the url.
+
+This is sometimes not optimal, for example when the string provided by
+the user is their password (and therefore visible in the url), 
+or longer than the maximum url length (2083 characters for IE)
+
+The solution to this is to use a POST request, rather than a 
+GET request. In a POST request, the query parameters are 
+in the HTTP message's header, rather than the url.
+
+With a POST we need to do two things. First of all, provide a POST
+form in the template views/hello-adj-index.tt - after the get form.
+-----
+<h1>POST form for accessing the hello-adj-post method</h1>
+<form action="hello-adj" method="post">
+  Adjective: <input type="text" name="adjective" /><br />
+  <input type="submit" value="Submit" />
+</form>
+-----
+
+
+And then in the hw controller add the "hello-adj" method this will call.
+
+----------
+
+post '/hello-adj' => sub {
+  my $params = params();
+    return
+  "<h1>Hello ".params->{adjective}." Things!</h1>".
+};
+--------
+
+Run it and see that if you visit the website at 
+
+http://localhost:3000/hello-adj-index
+enter a name like 'dynamic' *in the post form* and click submit, it will 
+display the page 
+http://localhost:3000/hello-adj
+and say 'Hello dynamic Things!'
+
+
+
+Exercise 8: Dynamic Content + Template Toolkit
+==============================================
+
+
+Implement a new GET query so that if the user enters a comma-separated
+list of adjectives it prints out a line for each one.
+
+
+A. First there's the new form to be appended to views/hello-adj-index.tt
+-----
+<h1>GET form for accessing hello-multiple-adj-get method</h1>
+<form action="hello-multiple-adj" method="get">
+  Adjective: <input type="text" name="adjectives" /><br />
+  <input type="submit" value="Submit" />
+</form>
+-----
+
+
+In hw, add a '/hello-multiple-adj' method
+
+----------
+
+get '/hello_multiple_adj' => sub {
+  my $params = params();
+  ## TODO: Split the params->{adjectives} into a list of comma separated words
+  ## and we pass a refence to this list into TT
+  template 'hello-multiple-adj' => { adjective_list => \@adj_list };
+};
+--------
+
+B. Now we must implement a new template view  and
+this is where the Template Toolkit shows its power!  
+
+
+Write this code in views/hello-multiple-adj.tt
+
+-----------------------------------
+[% FOREACH adj in adjective_list %]
+<p>Hello [% adj %] thing!</p>
+[% END %]
+-----------------------------------
+
+
+Check to see that it runs as expected.
+[markme]
+
+
+Exercise 9
+===========
+
+In Exercise 8 we saw how to use the FOREACH loop to show the
+contents of an array where each element was a string.
+
+In this example, we show the contents of a hashref.
+This is a very simple example but it illuminates 
+how hashrefs are represented in TT.
+
+Write a webpage http://localhost:3000/show-parameters 
+which displays everything it receives as a parameter.
+
+For example:
+
+http://localhosit:3000/show-parameters?x=1&y=2&z=t
+
+shows a webpage of 
+========================
+Parameters
+
+Key Value
+x 1
+y 2
+z t
+========================
+
+
+See perldoc Template::Manual::Directives
+
+A) Write a route handler in hw:
+---
+get '/show-parameters' => sub {
+  my $rh_params = params;
+  template 'parameters' => { parameter_hashref =>  $rh_params };
+};
+---
+Noting that writing just 
+  template 'parameters' => { parameter_hashref =>  params };
+won't work. Called in this way 'params' returns a hash, rather than a hashref.
+To understand why is beyond the scope of this course, but
+to findout more, read the Dancer::Request code implementing 'params' in
+5.10.1/Dancer/Request.pm
+and read
+$ perldoc -f wantarray
+
+
+B) Write the parameters template (parameters.tt)
+with a FOREACH loop which iterates over each key-value pair 
+of the 'parameter_hashref' variable
+
+---
+
+<h1>Parameters</h1>
+
+<table>
+<tr><td><b>Key</b></td><td><b>Value</b></td></tr>
+[% FOREACH p IN parameter_hashref %]
+
+---->INSERT YOUR CODE HERE
+
+[% END %]
+
+</table>
+
+---
+
+To figure out how, read 
+
+'iterated values which are hash references' in 
+
+perldoc Template::Manual::Directives
+
+[marking: just call the url with various parameters]
+
+
+
+
