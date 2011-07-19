@@ -201,9 +201,9 @@ The things to note about this:
 whenever you see [% date %] replace it with  $now->ymd 
 
 
-Exercise 4 Step 2
+Exercise 4 Step 2 - Banana skin 
 ------------------
-Copy part1/ex4/step1.pl to part1/ex4/step2_backwards.pl
+Copy part1/ex4/step1.pl to part1/ex4/step2-backwards.pl
 
 and swap the order of the 'set template' and 'set engines'
 
@@ -214,6 +214,7 @@ What happens?
 ========================
 
 Exercise 5. Route Type 1: parameterised base url
+=================================================
 
 Copy ./code/part1/ex2/step1.pl to ./code/part1/ex5/step1.pl
 
@@ -249,44 +250,42 @@ NOTES:
 a site-map for search engines to explore your website.
 * What's more - it's much prettier as a url than the two other approaches below.
 
-==============================
-FIXME UPTO HERE
-==============================
 
-
-Exercise 6. Dynamic Content 2: GET query 
-=========================================
-
+--------
 Exercise 5 shows how we can use paramaterised urls for generating content,
 but this is not the way for implementing pages which take their parameters
 from human input. You don't want them to have to type their name into the
 url.  It would be easier for them to type it into a field in a web page.
-
 The two approaches for implementing this are the GET and POST type forms.  
-The first thing we need to implement (A) is a page which takes the user's 
-adjective input.  The second (B) is a page to display the output.
+--------
 
-A) Create a new file views/hello-adj-index.tt containing
+Exercise 6. Route type 2: GET query 
+======================================
+
+Copy code/part1/ex4/step1.pl to code/part1/ex6/step1.pl
+
+1) Remove all the route handlers except '/' which should now be
+
+get '/' => sub {
+    template 'hello-adj-index';
+};
+
+
+2) Create a new template views/hello-adj-index.tt containing
 
 -----
-<h1>GET form for accessing the hello-adj-get method</h1>
-<form action="hello-adj-get" method="get">
+<h1>GET form for accessing the hello-adj get method</h1>
+<form action="hello-adj" method="get">
   Adjective: <input type="text" name="adjective" /><br />
   <input type="submit" value="Submit" />
 </form>
 -----
 
-In hw, add a '/hello-adj-index' method
 
 -----------
 
-get '/hello-adj-index' => sub {
-  template 'hello-adj-index';
-};
--------
 
-B) In hw add a method for /hello-adj
-
+3) In ./code/part1/ex6/step1.pl  add a '/hello-adj-index' method
 ----------
 
 get '/hello-adj' => sub {
@@ -298,13 +297,18 @@ get '/hello-adj' => sub {
 
 Run it and see that if you visit the website at 
 
-http://localhost:3000/hello-adj-index
+http://localhost:3000/
 and enter a name like 'dynamic' and click submit, it will 
 display the page 
 http://10.1.1.5:3000/hello-adj?adjective=dynamic
 and say 'Hello dynamic Things!'
 
-Exercise 7. Dynamic content 3: POST query 
+
+
+Exercise 7. Route Type 3: POST query 
+=======================================
+
+Copy ./code/part1/ex6 to ./code/part1/ex7
 
 You've just done two experiments with dynamically generating content of the
 web page based on information the user provided. In both cases, this
@@ -314,7 +318,7 @@ This is sometimes not optimal, for example when the string provided by
 the user is their password (and therefore visible in the url), 
 or longer than the maximum url length (2083 characters for IE)
 
-The solution to this is to use a POST request, rather than a 
+The solution to this is to use a POST request, instead of a 
 GET request. In a POST request, the query parameters are 
 in the HTTP message's header, rather than the url.
 
@@ -329,7 +333,8 @@ form in the template views/hello-adj-index.tt - after the get form.
 -----
 
 
-And then in the hw controller add the "hello-adj" method this will call.
+And then in the ./code/part1/ex7/step1.pl controller add the "hello-adj"
+*post* method
 
 ----------
 
@@ -349,30 +354,19 @@ http://localhost:3000/hello-adj
 and say 'Hello dynamic Things!'
 
 
-
 Exercise 8: Dynamic Content + Template Toolkit
 ==============================================
 
+Copy ./code/part1/ex6 to ./code/part1/ex8
 
 Implement a new GET query so that if the user enters a comma-separated
 list of adjectives it prints out a line for each one.
 
-
-A. First there's the new form to be appended to views/hello-adj-index.tt
------
-<h1>GET form for accessing hello-multiple-adj-get method</h1>
-<form action="hello-multiple-adj" method="get">
-  Adjective: <input type="text" name="adjectives" /><br />
-  <input type="submit" value="Submit" />
-</form>
------
-
-
-In hw, add a '/hello-multiple-adj' method
-
+In ./code/part1/ex8/step1.pl, update the /hello-adj route handler
+filling in the # TODO section with code to generate an array reference
 ----------
 
-get '/hello_multiple_adj' => sub {
+get '/hello_adj' => sub {
   my $params = params();
   ## TODO: Split the params->{adjectives} into a list of comma separated words
   ## and we pass a refence to this list into TT
@@ -394,20 +388,23 @@ Write this code in views/hello-multiple-adj.tt
 
 
 Check to see that it runs as expected.
-[markme]
 
 
 Exercise 9
 ===========
 
-In Exercise 8 we saw how to use the FOREACH loop to show the
+$ cp -r ./code/part1/ex8 ./code/part1/ex9
+$ rm ./code/part1/ex9/views/hello-multiple-adj.tt
+
+
+
+In Exercise 8 we saw how to use the Template's FOREACH loop to show the
 contents of an array where each element was a string.
 
-In this example, we show the contents of a hashref.
-This is a very simple example but it illuminates 
-how hashrefs are represented in TT.
+In this example, we show the contents of a hashref.  This is a very
+simple example but it illuminates how hashrefs are represented in TT.
 
-Write a webpage http://localhost:3000/show-parameters 
+GOAL: Write a webpage http://localhost:3000/show-parameters 
 which displays everything it receives as a parameter.
 
 For example:
@@ -427,24 +424,24 @@ z t
 
 See perldoc Template::Manual::Directives
 
-A) Write a route handler in hw:
+A) Write a route handler in ./code/part1/ex9/step1.pl :
 ---
 get '/show-parameters' => sub {
   my $rh_params = params;
   template 'parameters' => { parameter_hashref =>  $rh_params };
 };
----
-Noting that writing just 
-  template 'parameters' => { parameter_hashref =>  params };
-won't work. Called in this way 'params' returns a hash, rather than a hashref.
-To understand why is beyond the scope of this course, but
-to findout more, read the Dancer::Request code implementing 'params' in
-5.10.1/Dancer/Request.pm
-and read
-$ perldoc -f wantarray
+
+B) Change views/hello-adj-index.tt to 
+
+<form action="show-parameters" method="get">
+  First parameter: <input type="text" name="p1" /><br />
+  Second parameter: <input type="text" name="p2" /><br />
+  Third parameter: <input type="text" name="p3" /><br />
+  <input type="submit" value="Submit" />
+</form>
 
 
-B) Write the parameters template (parameters.tt)
+C) Write parameters.tt
 with a FOREACH loop which iterates over each key-value pair 
 of the 'parameter_hashref' variable
 
@@ -470,8 +467,34 @@ To figure out how, read
 
 perldoc Template::Manual::Directives
 
-[marking: just call the url with various parameters]
 
+
+D) Banana skin
+-----------------------------
+
+* $ cp ./code/part1/ex9/step1.pl ./code/part1/ex9/step2-backwards.pl
+---
+Change the /show-parameters routehandler  from
+
+get '/show-parameters' => sub {
+  my $rh_params = params;
+  template 'parameters' => { parameter_hashref =>  $rh_params };
+};
+
+to 
+
+get '/show-parameters' => sub {
+  template 'parameters' => { parameter_hashref =>  params };
+};
+
+and see what happens.
+
+Called in this way 'params' returns a hash, rather than a hashref.
+To understand why is beyond the scope of this course, but
+to find out more, read the Dancer::Request code implementing 'params' in
+5.10.1/Dancer/Request.pm
+and read
+$ perldoc -f wantarray
 
 
 
