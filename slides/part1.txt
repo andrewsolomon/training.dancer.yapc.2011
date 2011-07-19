@@ -203,7 +203,7 @@ whenever you see [% date %] replace it with  $now->ymd
 
 Exercise 4 Step 2 - Banana skin 
 ------------------
-Copy part1/ex4/step1.pl to part1/ex4/step2-backwards.pl
+Copy part1/ex4/step1.pl to part1/ex4/step2-back.pl
 
 and swap the order of the 'set template' and 'set engines'
 
@@ -472,7 +472,7 @@ perldoc Template::Manual::Directives
 D) Banana skin
 -----------------------------
 
-* $ cp ./code/part1/ex9/step1.pl ./code/part1/ex9/step2-backwards.pl
+* $ cp ./code/part1/ex9/step1.pl ./code/part1/ex9/step2-back.pl
 ---
 Change the /show-parameters routehandler  from
 
