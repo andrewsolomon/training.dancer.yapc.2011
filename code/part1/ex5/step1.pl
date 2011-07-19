@@ -9,8 +9,8 @@ get '/'         => sub {
     return "<h1>Hello World!</h1>";
 };
 
-get '/hello'    => sub {
-    return "<h1>Turn it all around people!</h1>";
+get '/hello/:adjective'    => sub {
+    return "<h1>Turn it all around ".params->{adjective}." people!</h1>";
 };
 
 Dancer->dance;
