@@ -1,7 +1,7 @@
 Implementing a Model View Controller Web application
 ====================================================
 
-The project of this section is to write a website a single page
+our project is to write a website as a single page
 of the format:
 http://localhost:3000/
 ===================================================
@@ -24,23 +24,42 @@ Search for airports matching [Sydney]
 * Sydney Kingsford Smith International Airport, AU
 ===================================================
 
-It will be similar to the elementary website we just developed, but because it is larger and more complex we will
-need to give it more structure, separating things out a bit more
-so that the code is easy to understand and maintain.
+It will be similar to the elementary website we just developed, but
+because it is larger and more complex we will need to give it more
+structure, separating things out a bit more so that the code is easy to
+understand and maintain.
 
 The structure we use in this section is the Model-View-Controller (MVC)
-framework. A model is the code which access and manipulates the data. The view
-is (in our case) the html/template toolkit files to dictate
-how the output is presented to the user.
-The controller is the code which connects a url with a view,
-and uses a module to populate a view with the appropriate data.
+framework. A model is the code which access and manipulates the data. The
+view is (in our case) the HTML/Template Toolkit file which dictates how
+the output is presented to the user.  The controller is the code which
+connects a url with a view, and uses a module to populate a view with
+the appropriate data.
 
+0. Play with the script below to understand how it works. We'll be
+calling the modules it's based on
+from our website controller.
+
+use Airport::Data;
+use Airport::Search;
+
+$ cd code/part2
+$ ./bin/search_airports --matching riga --word
+$ ./bin/search_airports --latitude  56.923 --longitude 23.9710   \
+    --number 3 --distance 0.01
+
+
+##########################################
+
+# UPTO HERE 
+
+##########################################
 
 1. Implement the skeleton described below.
 
 The following code is a skeleton on which you'll be building
 the website. Save these files in the specified locations
-and complete the template so that it the site runs without errors.
+and complete the template so that the site runs without errors.
 
 A) The script: findairport/wsa
 
