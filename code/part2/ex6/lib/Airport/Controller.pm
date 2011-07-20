@@ -3,17 +3,15 @@ use Dancer;
 use Airport::Data;
 use Airport::Search;
 
-my $ra_airports; 
+debug 'Reading airports_csv';
+my $ra_airports = Airport::Data::parse_airports(setting('airports_csv'));
+
 
 get '/' => sub {
   template 'index';
 };
 
 get '/results' => sub {
-  unless ($ra_airports && scalar(@$ra_airports)) {
-    debug 'Reading airports_csv';
-    $ra_airports = Airport::Data::parse_airports(setting('airports_csv'));
-  }
   my $searchstring = params->{searchstring};
   my $rh_search_params = Airport::Data::parse_search_string($searchstring);
 

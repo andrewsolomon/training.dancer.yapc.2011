@@ -191,16 +191,14 @@ c) Add the number of airports line to the top of the index/results page
 as in the example 'screenshots' above using the number of 
 elements in the array value being passed to the template.
 
-#############
-## UPTO 
-##############
 
 
-3. 
-
+Exercise 3. 
+==============
 $ cp -r ex2 ex3
 
-Instead of just write 'Found 3 airports from 6372' just
+
+Instead of just writing 'Found 3 airports from 6372'
 below the search result it would be more informative to say
 'Found 3 airports from 6372 - searching by location'
 or
@@ -210,8 +208,15 @@ Using Airport::Data::parse_search_string decide which method
 is appropriate depending on the user's input and add that to
 the statement above.
 
+#####################
+##
+## UPTO HERE
+##
+#####################
 
-4. Now use Airport::Search get_name_matching_airports 
+Exercise 4. 
+==========
+Now use Airport::Search get_name_matching_airports 
 or get_latlong_matching_airports to populate the 
 searchresults with the correct data.
 
