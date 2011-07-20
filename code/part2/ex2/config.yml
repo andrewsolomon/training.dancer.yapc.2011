@@ -8,6 +8,5 @@ template: 'template_toolkit'
 logger: 'console'
 log: 'debug'
 show_errors: 1
-
-
+airports_csv: 'data/iata_airports.csv'
 

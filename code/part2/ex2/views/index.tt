@@ -3,6 +3,9 @@
 <body>
   <h1>Find an Airport</h1>
 
+Found X airports from [% total_number_airports %]
+
+
 <form action="results" method="get">
   <input type="text" name="searchstring" value="[%searchstring%]"/><br />
   <input type="submit" value="Submit" />
