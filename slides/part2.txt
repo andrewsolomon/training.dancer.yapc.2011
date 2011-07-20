@@ -208,25 +208,23 @@ Using Airport::Data::parse_search_string decide which method
 is appropriate depending on the user's input and add that to
 the statement above.
 
-#####################
-##
-## UPTO HERE
-##
-#####################
-
 Exercise 4. 
 ==========
 Now use Airport::Search get_name_matching_airports 
 or get_latlong_matching_airports to populate the 
 searchresults with the correct data.
 
+Also - turn 'X' into the number of airports found.
 
-5. Make the search get_name_matching_airports case insensitive
+
+Dancing well into the night...
+===============================
+
+Exercise 5. Make the search get_name_matching_airports case insensitive
 and update its test script accordingly
 
-
-6. For each airport, if it has a home_link, make it a link when
+Exercise 6. For each airport, if it has a home_link, make it a link when
 you click on the airport name.
 
-7. Place another link to the right of each link to get the airports
+Exercise 7. Place another link to the right of each link to get the airports
 near this one (1 degree circumference)
