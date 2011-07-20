@@ -111,7 +111,7 @@ and change the output to be a bit prettier using HTML tags.
 
 Exercise 2: 
 
-Copy part1/ex1/step2-forward.pl to Copy part1/ex2/step1.pl
+Copy part1/ex1/step2-forward.pl to part1/ex2/step1.pl
 
 and create another web page for the url
     http://localhost:3000/hello
