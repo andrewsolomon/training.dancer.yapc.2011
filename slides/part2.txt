@@ -38,35 +38,28 @@ the appropriate data.
 
 0. Play with the script below to understand how it works. We'll be
 calling the modules it's based on
-from our website controller.
+from our website controller: Airport::Data and Airport::Search
 
-use Airport::Data;
-use Airport::Search;
-
-$ cd code/part2
+$ cd code/part2/airport-toolkit
 $ ./bin/search_airports --matching riga --word
 $ ./bin/search_airports --latitude  56.923 --longitude 23.9710   \
     --number 3 --distance 0.01
 
 
-##########################################
 
-# UPTO HERE 
-
-##########################################
-
-1. Implement the skeleton described below.
+Exercise 1. Implement the skeleton described below.
+====================================================
 
 The following code is a skeleton on which you'll be building
 the website. Save these files in the specified locations
 and complete the template so that the site runs without errors.
 
-A) The script: findairport/wsa
+A) The script: part2/ex1/wsa
 
 This is surprisingly minimal, but we're putting
 all the route handlers into Airport::Controller
 and the 'set' calls are being replaced with 
-the contents of the config file
+the contents of a config file
 
 ===================
 #!/usr/bin/perl
@@ -79,28 +72,35 @@ Dancer->dance;
 
 ===================
 
-B) The config file: findairport/config.yml
+B) The config file: part2/ex1/config.yml
 
-Instead of having some 'set' calls in the perl code
-we're doing it all in one place.
+Instead of having 'set' calls in the perl code
+we're putting all the settings in a config file
+which can be changed without modifying the code.
 
-================================== findairport/config.yml
 
-template: 'template_toolkit'
+========================
 
 engines:
   template_toolkit:
     start_tag: '[%'
     stop_tag: '%]'
 
+template: 'template_toolkit'
+
 logger: 'console'
 log: 'debug'
 show_errors: 1
 
+
+
 ===================================
+NOTE: Remember the Banana skin (exercise 4 step 2)?
+Because we've put engines and template into a config file
+the ordering no longer matters.
 
 
-C) The handlers module lib/Airport/Controller.pm
+C) The handlers module part2/ex1/lib/Airport/Controller.pm
 
 =================================
 package Airport::Controller;
@@ -144,7 +144,7 @@ D) views/index.tt
 <table>
 <tr><td><b>Name</b></td><td><b>Country</b></td></tr>
 
------> ADD THE FOREACH LOOP TO FILL IN COLUMNS HERE
+-----> FIXME: ADD THE FOREACH LOOP TO FILL IN COLUMNS HERE
 
 </table>
 [% END %]
@@ -154,19 +154,24 @@ D) views/index.tt
 </html>
 ---------------------
 
-Note: wsa has to be in the directory containing the 'views' and 'lib' 
-subdirectories and the config.yml
-otherwise it needs to be told where to look for them.
-
-[Marking: 
-- make sure the files all sit in the right places.
-- grep the config file for various things
-- make sure the thing runs as expected
-]
+NOTE: wsa and the config.yml has to be in the directory containing the
+'views' and 'lib' subdirectories otherwise wsa needs to be told where to
+look for everything.
 
 
+Move on to Exercise 2 once you've changed views/index.tt to display 
+the aiports being sent back from the controller.
 
-2. Edit Airport::Controller so that it loads the array of 
+2.  Copy ex1 to ex2
+
+a) Add 
+
+airports_csv: 'data/iata_airports.csv'
+
+to config.yml
+
+
+b) Edit Airport::Controller so that it loads the array of 
 airports generated with Airport::Data::parse_airports 
 into a package variable which will be used in 
 the proper search function.
