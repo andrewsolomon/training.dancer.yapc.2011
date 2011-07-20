@@ -198,7 +198,7 @@ The things to note about this:
 - 'template 'date_time'' means 'look for views/date_time.tt in the views directory
 - the hash ref  { time => $dt->hms, date => $dt->ymd } says
 'Whenever you see [% time %] replace it with $dt->hms and
-whenever you see [% date %] replace it with  $dt->ymd 
+whenever you see [% date %] replace it with  $dt->ymd
 
 
 Exercise 4 Step 2 - Banana skin 
@@ -291,7 +291,7 @@ get '/' => sub {
 get '/hello-adj' => sub {
   my $params = params();
     return
-  "<h1>Hello ".params->{adjective}." Things!</h1>".
+  "<h1>Hello ".params->{adjective}." Things!</h1>"
 };
 --------
 
@@ -347,7 +347,7 @@ post '/hello-adj' => sub {
 
 Run it and see that if you visit the website at 
 
-http://localhost:3000/hello-adj-index
+http://localhost:3000/
 enter a name like 'dynamic' *in the post form* and click submit, it will 
 display the page 
 http://localhost:3000/hello-adj
