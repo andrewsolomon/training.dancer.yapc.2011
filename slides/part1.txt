@@ -102,7 +102,7 @@ before calling 'get' on it.
 ========================
 
 
-Copy part1/ex1/step1.pl to part1/ex1/step2-forward.pl
+$ cp part1/ex1/step1.pl part1/ex1/step2-forward.pl
 
 and change the output to be a bit prettier using HTML tags.
 
@@ -111,7 +111,7 @@ and change the output to be a bit prettier using HTML tags.
 
 Exercise 2: 
 
-Copy part1/ex1/step2-forward.pl to part1/ex2/step1.pl
+$ cp part1/ex1/step2-forward.pl part1/ex2/step1.pl
 
 and create another web page for the url
     http://localhost:3000/hello
@@ -127,7 +127,8 @@ Exercise 3: Non-static pages
 We've shown how to write static pages, but that's no better
 than plain HTML. 
 
-Copy part1/ex1/step2-forward.pl to part1/ex3/step1.pl
+$ cp part1/ex1/step2-forward.pl part1/ex3/step1.pl
+
 and add a new route handler 'date_time' which shows not just 'Hello World', but also
 the time.
 
@@ -203,7 +204,7 @@ whenever you see [% date %] replace it with  $dt->ymd
 
 Exercise 4 Step 2 - Banana skin 
 ------------------
-Copy part1/ex4/step1.pl to part1/ex4/step2-back.pl
+$ cp part1/ex4/step1.pl part1/ex4/step2-back.pl
 
 and swap the order of the 'set template' and 'set engines'
 
@@ -216,7 +217,7 @@ What happens?
 Exercise 5. Route Type 1: parameterised base url
 =================================================
 
-Copy ./code/part1/ex2/step1.pl to ./code/part1/ex5/step1.pl
+$ cp part1/ex2/step1.pl part1/ex5/step1.pl
 
 Modify the /hello route handler to take another parameter.
 
@@ -262,7 +263,7 @@ The two approaches for implementing this are the GET and POST type forms.
 Exercise 6. Route type 2: GET query 
 ======================================
 
-Copy code/part1/ex4/step1.pl to code/part1/ex6/step1.pl
+$ cp part1/ex4/step1.pl part1/ex6/step1.pl
 
 1) Remove all the route handlers except '/' which should now be
 
@@ -270,6 +271,7 @@ get '/' => sub {
     template 'hello-adj-index';
 };
 
+NOTE: Don't remove the 'set's only the 'get's!!
 
 2) Create a new template views/hello-adj-index.tt containing
 
@@ -308,7 +310,7 @@ and say 'Hello dynamic Things!'
 Exercise 7. Route Type 3: POST query 
 =======================================
 
-Copy ./code/part1/ex6 to ./code/part1/ex7
+$ cp -r part1/ex6 part1/ex7
 
 You've just done two experiments with dynamically generating content of the
 web page based on information the user provided. In both cases, this
@@ -357,7 +359,7 @@ and say 'Hello dynamic Things!'
 Exercise 8: Dynamic Content + Template Toolkit
 ==============================================
 
-Copy ./code/part1/ex6 to ./code/part1/ex8
+$ cp -r part1/ex6 part1/ex8
 
 Implement a new GET query so that if the user enters a comma-separated
 list of adjectives it prints out a line for each one.
@@ -393,7 +395,7 @@ Check to see that it runs as expected.
 Exercise 9
 ===========
 
-$ cp -r ./code/part1/ex8 ./code/part1/ex9
+$ cp -r part1/ex8 part1/ex9
 $ rm ./code/part1/ex9/views/hello-multiple-adj.tt
 
 
@@ -472,7 +474,7 @@ perldoc Template::Manual::Directives
 D) Banana skin
 -----------------------------
 
-* $ cp ./code/part1/ex9/step1.pl ./code/part1/ex9/step2-back.pl
+$ cp part1/ex9/step1.pl part1/ex9/step2-back.pl
 ---
 Change the /show-parameters routehandler  from
 
