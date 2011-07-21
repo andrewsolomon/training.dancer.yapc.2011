@@ -1,13 +1,15 @@
 Elementary Web Application
 ===========================
 
-Concepts:
-- Route handler - the mapping of a path to a subroutine
-- Route types:
+Concepts
+--------
+
+* Route handler - the mapping of a path to a subroutine
+* Route types:
     1. /link/:like/:this where all the data is in the url but not a GET
     2. GET query 
     3. POST query
-- Template
+* Template
 
 
 We assume you've done a static website. A simple HTML page.
