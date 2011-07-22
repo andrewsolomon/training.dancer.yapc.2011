@@ -237,20 +237,22 @@ Run it and make sure it works. The things to note about this:
 * ``` template 'date_time' ``` means "look for ``` views/date_time.tt ``` in the ``` views ``` directory
 * the hash ref ``` { time => $dt->hms, date => $dt->ymd }  ``` says
 "Whenever you see ``` [% time %] ``` replace it with ``` $dt->hms ``` and
-whenever you see ``` [% date %] ``` replace it with  $dt->ymd
+whenever you see ``` [% date %] ``` replace it with ``` $dt->ymd ```
 
 For further information about Template Toolkit directives visit this page http://template-toolkit.org/docs/manual/Directives.html
 
 
-Exercise 4 Step 2 - Banana skin 
-------------------
+Exercise 4' (2 steps back and slip on a banana skin)
+----------------------------------------------------
+```
 $ cp part1/ex4/step1.pl part1/ex4/step2-back.pl
+```
 
-and swap the order of the 'set template' and 'set engines'
+and swap the order of the ``` set template ``` and ``` set engines ``` calls. 
 
-What happens?
+<b>Q:<\b> What happens?
 
-[It's a Dancer bug - no-one's perfect!]
+... It's a Dancer bug - no-one's perfect!
 
 ========================
 
