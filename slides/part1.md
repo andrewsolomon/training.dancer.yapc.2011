@@ -87,13 +87,11 @@ This is just a bit of Perl cosmetics to change the focus of the reader from the 
 
 ```set('logger', 'console');```
 
-Rewrite the whole script in this way, save it as 
+Rewrite the whole script in this way, save it as ``` part1/ex1/step1-back.pl ```
 
-```part1/ex1/step1-back.pl```
+and run it to see that it behaves exactly the same as ``` step1.pl ```
 
-and run it to see that it behaves exactly the same as step1.pl
-
-*HINT:* to understand the ```get```'s second argument set
+<b>HINT:</b> to understand the ``` get ``` 's second argument set
 
 ```
 my $hwsub = sub {
