@@ -163,7 +163,9 @@ Hello world, the time is now 2002-12-06 14:02:29
  * ``` $ perldoc DateTime ```
 
  * Calculate the string to display in the in the route handler
- ```
+
+
+```
 my $dt = DateTime->now(time_zone => 'Europe/Riga'); #### FIXME $time should be $dt in the answers
 my $s_date = $dt->ymd; my $s_time = $dt->hms;
 ```
