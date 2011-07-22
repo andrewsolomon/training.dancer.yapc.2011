@@ -318,49 +318,60 @@ URL.  It would be easier for them to type it into a field in a web page.
 The two approaches for implementing this are the GET and POST type forms. 
 
 
-Exercise 6. Route type 2: GET query 
+Exercise 6: Route type 2 - GET query 
 ======================================
 
+```
 $ cp part1/ex4/step1.pl part1/ex6/step1.pl
+```
 
-1) Remove all the route handlers except '/' which should now be
+* Remove all the route handlers except '/' which should now be
 
+```
 get '/' => sub {
     template 'hello-adj-index';
 };
+```
 
-NOTE: Don't remove the 'set's only the 'get's!!
+<b>NOTE</b> Don't remove the ```set``` s only remove the ```get``` s!!
 
-2) Create a new template views/hello-adj-index.tt containing
+* Create a new template ```views/hello-adj-index.tt``` containing
 
------
+```
 <h1>GET form for accessing the hello-adj get method</h1>
 <form action="hello-adj" method="get">
   Adjective: <input type="text" name="adjective" /><br />
   <input type="submit" value="Submit" />
 </form>
------
+```
 
 
------------
+* In ``` part1/ex6/step1.pl ``` add a ``` /hello-adj-index ``` method
 
-
-3) In ./code/part1/ex6/step1.pl  add a '/hello-adj-index' method
-----------
-
+```
 get '/hello-adj' => sub {
   my $params = params();
     return
   "<h1>Hello ".params->{adjective}." Things!</h1>"
 };
---------
+```
+
+==========
 
 Run it and see that if you visit the website at 
 
-http://localhost:3000/
+```
+http://0.0.0.:3000/
+```
+
 and enter a name like 'dynamic' and click submit, it will 
 display the page 
-http://10.1.1.5:3000/hello-adj?adjective=dynamic
+
+```
+http://0.0.0.0:3000/hello-adj?adjective=dynamic
+
+```
+
 and say 'Hello dynamic Things!'
 
 
