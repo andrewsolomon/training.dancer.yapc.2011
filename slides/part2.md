@@ -244,8 +244,7 @@ searchresults with the correct data.
 
 Also - turn 'X' into the number of airports found.
 
-
-```Dancing well into the night... ```
+Dancing well into the night... 
 ===============================
 
 * <b>Exercise 5</b> Make the search get_name_matching_airports case insensitive
