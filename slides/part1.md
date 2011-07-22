@@ -9,27 +9,22 @@ Concepts
     1. ```http://example.com/link/:like/:this``` where all the data is in the url but not a GET
     2. GET query ```http://example.com/more?like=this&orlike=that```
     3. POST query ```http://example.com/justthis```
-* <b>Template</b> - HTML with embedded with ```[% directives %]``` 
+* <b>Template</b> - HTML files embedded with ```[% directives %]``` 
 
 
-We assume you've done a static website. A simple HTML page.
-The only active part of a static website is a link to
-take you from one static page to another. E.g.
-```html
-<a href="http://www.google.com">Google</a>
-```
+We assume you've done a static website. A simple HTML page. The only active part of a static website is a link to
+take you from one static page to another. For example
+```<a href="http://www.example.com">Example</a>```
 
-More interesting is our website where clicking on a button
-will do some data mining and generate a new page on the fly.
-That's a '<b>Web Application</b>' and this class will take you through
-putting together a web application.
+More interesting is a website where clicking on a button will do some data mining and generate a new page on the fly.
+That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
 
 
 Exercise 1
 ===========
 Create the script part1/ex1/step1.pl
 
-====
+```perl
 #!/usr/bin/perl
 
 use Dancer;
@@ -43,6 +38,7 @@ get '/' => sub {
 };
 
 Dancer->dance;
+```
 
 ====
 running it at the command line you should get something like:
