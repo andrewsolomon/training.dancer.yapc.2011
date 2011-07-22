@@ -250,7 +250,7 @@ $ cp part1/ex4/step1.pl part1/ex4/step2-back.pl
 
 and swap the order of the ``` set template ``` and ``` set engines ``` calls. 
 
-<b>Q: <\b> What happens?
+<b> What happens? </b>
 
 ... It's a Dancer bug - no-one's perfect!
 
