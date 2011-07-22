@@ -22,7 +22,7 @@ That's an example of a '<b>Web Application</b>' and this class will take you thr
 
 Exercise 1
 ===========
-Create the script part1/ex1/step1.pl
+Create the script ```part1/ex1/step1.pl```
 
 ```perl
 #!/usr/bin/perl
@@ -42,72 +42,78 @@ Dancer->dance;
 
 
 Running it at the command line you should get something like:
-```bash
+
+```
 $ ./hw
 >> Dancer server 11757 listening on http://0.0.0.0:3000
 ```
 
-See what happens when you visit the url with your browser. If this doesn't work, replace '0.0.0.0' with 'localhost' or the IP address of the machine you're working on.
+See what happens when you visit the url with your browser. Replace '0.0.0.0' with the IP address of the machine you're working on.
 
 
 Things to note about the code:
-* 'use Dancer' brings along 'use strict' and 'use warnings' so 
-we don't need to type them.
+
+* ```'use Dancer'``` brings along ```'use strict'``` and ```'use warnings'``` so  we don't need to type them.
 * The three settings
+```
   set logger    => 'console';
   set log       => 'debug';
   set show_errors => 1;
+```
 are telling it to keep you informed of what the problem is when
-you're coding to make sure you get as much information as possible.
+things go wrong to make sure you get as much information as possible.
 You'll want to log errors to a file once it's a public website.
-* get '/' => sub {} 
+* ```get '/' => sub {} ```
 says, on an HTTP GET request, call the subroutine on the right 
 of the arrow to generate the content of the page to be displayed.
-* Dancer->dance ;
+* ```Dancer->dance;```
 This is an example of a method call on an object. To use Moose we don't
 need to understand how to develop Perl objects - we just need to get a
 feel for how to use them.
 
 
-In part1/ex1/step1.pl these commands would have looked a bit
-suspicious to the Perl newbie:
-
+Now the following commands would have looked a bit suspicious to the Perl newbie:
+```
 set logger    => 'console';
 get '/' => sub {
     return "Hello World!";
 };
+```
 
-This is just a bit of Perl cosmetics to change the focus of 
-the reader from the subroutine being called, to its arguments.
-
-The first of these could just as well have been written
+This is just a bit of Perl cosmetics to change the focus of the reader from the subroutine being called, to its arguments. The first of these could just as well have been written
 
 set('logger', 'console');
 
-Rewrite the whole script in this way and save it as 
+Rewrite the whole script in this way, save it as 
 
-part1/ex1/step1-back.pl
+```part1/ex1/step1-back.pl```
 
+and run it to see that it behaves exactly the same as step1.pl
 
-Hint: to understand the get's second argument set
+*HINT:* to understand the ```get```'s second argument set
 
+```
 my $hwsub = sub {
     return "Hello World!";
 };
+```
 
-before calling 'get' on it.
-
-========================
+before calling '```get```' on $hwsub.
 
 
+Finally,
+
+```
 $ cp part1/ex1/step1.pl part1/ex1/step2-forward.pl
+```
 
-and change the output to be a bit prettier using HTML tags.
+and change the output to be a bit prettier using HTML tags:
 
-<h1>Hello World!</h1>
-================================================================
+```<h1>Hello World!</h1>```
+
 
 Exercise 2: 
+===========
 
 $ cp part1/ex1/step2-forward.pl part1/ex2/step1.pl
 
