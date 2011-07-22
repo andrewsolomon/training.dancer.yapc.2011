@@ -135,24 +135,34 @@ which returns ``` <h1>Turn it all around people!</h1> ```
 Exercise 3: Non-static pages
 ============================
 
-We've shown how to write static pages, but that's no better
-than plain HTML. 
+We've shown how to write static pages, but that's no better than plain HTML. First, 
 
+```
 $ cp part1/ex1/step2-forward.pl part1/ex3/step1.pl
+```
 
-and add a new route handler 'date_time' which shows not just 'Hello World', but also
+and then add a new route handler 'date_time' which shows not just 'Hello World', but also
 the time.
 
+That is:
+
+```
 http://localhost:3000/date_time
+```
 
-'Hello world, the time is now 2002-12-06 14:02:29'
+Displays a page containing: 
 
-Hints: 
-* Calculate the time using the DateTime module, it's 'now' creation method, and  its 'ymd' and 'hms' methods.
-* $ perldoc DateTime
-* my $dt = DateTime->now(time_zone => 'Europe/Riga'); #### ANDREW FIXME $time becomes $dt
+```
+Hello world, the time is now 2002-12-06 14:02:29
+```
+
+<b>HINTS</b>: 
+* Calculate the time using the ```DateTime``` module, its ```now``` creation method, and  its ```ymd``` and ```hms``` methods.
+* ``` $ perldoc DateTime ```
+* Calculate the string to display in the in the route handler
+my $dt = DateTime->now(time_zone => 'Europe/Riga'); #### FIXME $time should be $dt in the answers
 my $s_date = $dt->ymd; my $s_time = $dt->hms;
-
+```
 
 
 Exercise 4: Template Toolkit
