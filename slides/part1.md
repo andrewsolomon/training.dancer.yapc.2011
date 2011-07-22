@@ -426,34 +426,35 @@ and say 'Hello dynamic Things!'
 Exercise 8: Dynamic Content + Template Toolkit
 ==============================================
 
+Implement a new GET query so that if the user enters a comma-separated list of adjectives it prints out a line for each one.
+
+```
 $ cp -r part1/ex6 part1/ex8
+```
 
-Implement a new GET query so that if the user enters a comma-separated
-list of adjectives it prints out a line for each one.
+* In ``` part1/ex8/step1.pl ```, update the ``` /hello-adj ``` route handler
+filling in the ``` # TODO ``` section with code to generate an array reference
 
-In ./code/part1/ex8/step1.pl, update the /hello-adj route handler
-filling in the # TODO section with code to generate an array reference
-----------
-
+```
 get '/hello_adj' => sub {
   my $params = params();
   ## TODO: Split the params->{adjectives} into a list of comma separated words
   ## and we pass a refence to this list into TT
   template 'hello-multiple-adj' => { adjective_list => \@adj_list };
 };
---------
 
-B. Now we must implement a new template view  and
+```
+
+* Now we must implement a new template view  and
 this is where the Template Toolkit shows its power!  
 
+Write this code in ``` views/hello-multiple-adj.tt ```
 
-Write this code in views/hello-multiple-adj.tt
-
------------------------------------
+```
 [% FOREACH adj in adjective_list %]
-<p>Hello [% adj %] thing!</p>
+   <p>Hello [% adj %] thing!</p>
 [% END %]
------------------------------------
+```
 
 
 Check to see that it runs as expected.
