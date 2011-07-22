@@ -157,9 +157,13 @@ Hello world, the time is now 2002-12-06 14:02:29
 ```
 
 <b>HINTS</b>: 
-* Calculate the time using the ```DateTime``` module, its ```now``` creation method, and  its ```ymd``` and ```hms``` methods.
-* ``` $ perldoc DateTime ```
-* Calculate the string to display in the in the route handler
+
+ * Calculate the time using the ```DateTime``` module, its ```now``` creation method, and  its ```ymd``` and ```hms``` methods.
+
+ * ``` $ perldoc DateTime ```
+
+ * Calculate the string to display in the in the route handler
+ ```
 my $dt = DateTime->now(time_zone => 'Europe/Riga'); #### FIXME $time should be $dt in the answers
 my $s_date = $dt->ymd; my $s_time = $dt->hms;
 ```
