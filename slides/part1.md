@@ -256,51 +256,64 @@ and swap the order of the ``` set template ``` and ``` set engines ``` calls.
 
 
 
-Exercise 5. Route Type 1: parameterised base url
-=================================================
+Exercise 5:  Route Type 1 - parameterised base URL
+==================================================
 
+First, 
+
+```
 $ cp part1/ex2/step1.pl part1/ex5/step1.pl
+```
 
-Modify the /hello route handler to take another parameter.
+then modify the ``` /hello ``` route handler to take another parameter. That is, instead of writing 
 
-That is, instead of writing 
+```
 get '/hello' => sub {};
+```
+
 we write 
+
+```
 get '/hello/:adjective' => sub {};
+```
 
 Then within the associated subroutine, the variable
-params->{adjective} will be the string in the url after 
-/hello-adj-par/ 
-
-NOTE: params is a method returning a hashref of all the parameters
+``` params->{adjective} ``` will be the string in the URL after 
+``` /hello/ ```
+ 
 
 Therefore, we can change 
+```
   return "<h1>Turn it all around people!</h1>";
-to     
-  return "<h1>Turn it all around ".params->{adjective}." people!</h1>";
+```
 
+to 
+```    
+  return "<h1>Turn it all around ".params->{adjective}." people!</h1>";
+```
 
 Then navigate to the page: 
-  http://10.1.1.5:3000/hello/funny
+```  http://10.1.1.5:3000/hello/funny ```
 
 or 
-  http://10.1.1.5:3000/hello/interesting
+```  http://10.1.1.5:3000/hello/interesting ```
 
 Implement this and see that it works.
 
-NOTES:
-* This technique is great for auto-generated urls which might populate
+<b>NOTES</b>:
+* ``` params ``` is a method returning a hashref of all the parameters
+* This technique is great for auto-generated URLs which might populate
 a site-map for search engines to explore your website.
-* What's more - it's much prettier as a url than the two other approaches below.
+* It's much prettier as a URL than the two other approaches below.
 
+=====
 
---------
-Exercise 5 shows how we can use paramaterised urls for generating content,
+We've just seen how we can use parameterised URLs for generating content,
 but this is not the way for implementing pages which take their parameters
 from human input. You don't want them to have to type their name into the
-url.  It would be easier for them to type it into a field in a web page.
-The two approaches for implementing this are the GET and POST type forms.  
---------
+URL.  It would be easier for them to type it into a field in a web page.
+The two approaches for implementing this are the GET and POST type forms. 
+
 
 Exercise 6. Route type 2: GET query 
 ======================================
