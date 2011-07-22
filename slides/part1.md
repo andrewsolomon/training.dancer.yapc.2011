@@ -497,16 +497,20 @@ would display
 ========================
 
 
-See perldoc Template::Manual::Directives
 
-A) Write a route handler in ./code/part1/ex9/step1.pl :
----
+
+* Write a route handler in ``` part1/ex9/step1.pl ``` 
+
+```
 get '/show-parameters' => sub {
   my $rh_params = params;
   template 'parameters' => { parameter_hashref =>  $rh_params };
 };
+```
 
-B) Change views/hello-adj-index.tt to 
+* Change ``` views/hello-adj-index.tt ``` to 
+
+```
 
 <form action="show-parameters" method="get">
   First parameter: <input type="text" name="p1" /><br />
@@ -515,12 +519,14 @@ B) Change views/hello-adj-index.tt to
   <input type="submit" value="Submit" />
 </form>
 
+```
 
-C) Write parameters.tt
-with a FOREACH loop which iterates over each key-value pair 
-of the 'parameter_hashref' variable
+C) Write ``` parameters.tt ``` with a FOREACH loop which iterates over each key-value pair 
+of the ``` parameter_hashref ``` variable
 
----
+
+
+```
 
 <h1>Parameters</h1>
 
@@ -534,42 +540,44 @@ of the 'parameter_hashref' variable
 
 </table>
 
----
+```
 
-To figure out how, read 
 
-'iterated values which are hash references' in 
+Dor help processing hashrefs in the template, read '<i>iterated values which are hash references</i>' in 
 
+```
 perldoc Template::Manual::Directives
+```
 
 
+<b>Exercise 9' Banana skin</b>
 
-D) Banana skin
------------------------------
-
+```
 $ cp part1/ex9/step1.pl part1/ex9/step2-back.pl
----
-Change the /show-parameters routehandler  from
+```
+Change the ``` /show-parameters``` routehandler  from
 
+```
 get '/show-parameters' => sub {
   my $rh_params = params;
   template 'parameters' => { parameter_hashref =>  $rh_params };
 };
+```
 
 to 
 
+```
 get '/show-parameters' => sub {
   template 'parameters' => { parameter_hashref =>  params };
 };
 
+```
+
 and see what happens.
 
-Called in this way 'params' returns a hash, rather than a hashref.
-To understand why is beyond the scope of this course, but
-to find out more, read the Dancer::Request code implementing 'params' in
-5.10.1/Dancer/Request.pm
-and read
+Called in this way 'params' returns a hash, rather than a hashref. To understand why is beyond the scope of this class, but
+to find out more, read the Dancer::Request implementation of the ``` params ``` subroutine and read
+
+```
 $ perldoc -f wantarray
-
-
-
+```
