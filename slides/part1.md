@@ -483,7 +483,8 @@ http://localhosit:3000/show-parameters?x=1&y=2&z=t
 
 would display
 
-========================
+
+----
 
 <b>Parameters</b>
 
@@ -494,7 +495,7 @@ would display
 <tr><td>z</td><td>t</td></tr>
 </table>
 
-========================
+----
 
 
 
@@ -521,7 +522,7 @@ get '/show-parameters' => sub {
 
 ```
 
-C) Write ``` parameters.tt ``` with a FOREACH loop which iterates over each key-value pair 
+*  Write ``` parameters.tt ``` with a FOREACH loop which iterates over each key-value pair 
 of the ``` parameter_hashref ``` variable
 
 
@@ -543,7 +544,7 @@ of the ``` parameter_hashref ``` variable
 ```
 
 
-Dor help processing hashrefs in the template, read '<i>iterated values which are hash references</i>' in 
+For help processing hashrefs in the template, read '<i>iterated values which are hash references</i>' in 
 
 ```
 perldoc Template::Manual::Directives
