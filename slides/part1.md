@@ -65,16 +65,18 @@ Things to note about the code:
 are telling it to keep you informed of what the problem is when
 things go wrong to make sure you get as much information as possible.
 You'll want to log errors to a file once it's a public website.
+
 * ```get '/' => sub {} ```
 says, on an HTTP GET request, call the subroutine on the right 
 of the arrow to generate the content of the page to be displayed.
+
 * ```Dancer->dance;```
 This is an example of a method call on an object. To use Moose we don't
 need to understand how to develop Perl objects - we just need to get a
 feel for how to use them.
 
-
 Now the following commands would have looked a bit suspicious to the Perl newbie:
+
 ```
 set logger    => 'console';
 get '/' => sub {
@@ -84,7 +86,7 @@ get '/' => sub {
 
 This is just a bit of Perl cosmetics to change the focus of the reader from the subroutine being called, to its arguments. The first of these could just as well have been written
 
-set('logger', 'console');
+```set('logger', 'console');```
 
 Rewrite the whole script in this way, save it as 
 
