@@ -15,9 +15,9 @@ Concepts
 We assume you've done a static website. A simple HTML page.
 The only active part of a static website is a link to
 take you from one static page to another. E.g.
-{{{
+```html
 <a href="http://www.google.com">Google</a>
-}}}
+```
 
 More interesting is our website where clicking on a button
 will do some data mining and generate a new page on the fly.
