@@ -20,8 +20,8 @@ More interesting is a website where clicking on a button will do some data minin
 That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
 
 
-Exercise 1
-===========
+Exercise 1 - An index route
+==============================
 Create the script ```part1/ex1/step1.pl```
 
 ```perl
@@ -113,18 +113,24 @@ and change the output to be a bit prettier using HTML tags:
 ```<h1>Hello World!</h1>```
 
 
-Exercise 2: 
-===========
+Exercise 2: A non-index route
+==============================
 
+```
 $ cp part1/ex1/step2-forward.pl part1/ex2/step1.pl
+```
 
-and create another web page for the url
-    http://localhost:3000/hello
-which returns '<h1>Turn it all around people!</h1>'
+and create another route handler for the URL
 
-Hint: Instead of get's first argument as '/' it should be '/hello'
+```
+    http://0.0.0.0:3000/hello
+```
 
-=================================================================
+which returns ``` <h1>Turn it all around people!</h1> ```
+
+<b>HINT</b>: Instead of ``` get ```'s first argument as ``` '/' ``` it should be ``` '/hello' ```
+
+
 
 Exercise 3: Non-static pages
 ============================
