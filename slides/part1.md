@@ -301,9 +301,12 @@ or
 Implement this and see that it works.
 
 <b>NOTES</b>:
+
 * ``` params ``` is a method returning a hashref of all the parameters
+
 * This technique is great for auto-generated URLs which might populate
 a site-map for search engines to explore your website.
+
 * It's much prettier as a URL than the two other approaches below.
 
 =====
