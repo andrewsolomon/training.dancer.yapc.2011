@@ -252,7 +252,7 @@ and swap the order of the ``` set template ``` and ``` set engines ``` calls.
 
 <b> What happens? </b>
 
-... It's a Dancer bug - no-one's perfect!
+... It's a Dancer 1.3 bug - no-one's perfect!
 
 
 
@@ -460,35 +460,40 @@ Write this code in ``` views/hello-multiple-adj.tt ```
 Check to see that it runs as expected.
 
 
-Exercise 9
-===========
+Exercise 9: TT hashrefs and exploring parameters 
+===============================================
 
-$ cp -r part1/ex8 part1/ex9
-$ rm ./code/part1/ex9/views/hello-multiple-adj.tt
-
-
-
-In Exercise 8 we saw how to use the Template's FOREACH loop to show the
+In Exercise 8 we saw how to use the Template's ```FOREACH``` loop to show the
 contents of an array where each element was a string.
 
 In this example, we show the contents of a hashref.  This is a very
 simple example but it illuminates how hashrefs are represented in TT.
 
-GOAL: Write a webpage http://localhost:3000/show-parameters 
+```
+$ cp -r part1/ex8 part1/ex9
+$ rm part1/ex9/views/hello-multiple-adj.tt
+```
+
+Write a webpage http://localhost:3000/show-parameters 
 which displays everything it receives as a parameter.
 
 For example:
 
 http://localhosit:3000/show-parameters?x=1&y=2&z=t
 
-shows a webpage of 
-========================
-Parameters
+would display
 
-Key Value
-x 1
-y 2
-z t
+========================
+
+<b>Parameters</b>
+
+<table>
+<tr><td><b>Key</b></td><td><b>Value</b></td></tr>
+<tr><td>x</td><td>1</td></tr>
+<tr><td>y</td><td>2</td></tr>
+<tr><td>z</td><td>t</td></tr>
+</table>
+
 ========================
 
 
