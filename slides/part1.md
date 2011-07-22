@@ -70,9 +70,7 @@ You'll want to log errors to a file once it's a public website.
 says, on an HTTP GET request, call the subroutine on the right 
 of the arrow to generate the content of the page to be displayed.
 
-*  ``` Dancer->dance; ```
-
-This is an example of a method call on an object. To use Moose we don't
+*  ``` Dancer->dance; ``` This is an example of a method call on an object. To use Moose we don't
 need to understand how to develop Perl objects - we just need to get a
 feel for how to use them.
 
