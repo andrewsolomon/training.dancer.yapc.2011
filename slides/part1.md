@@ -40,16 +40,14 @@ get '/' => sub {
 Dancer->dance;
 ```
 
-====
-running it at the command line you should get something like:
-===
+
+Running it at the command line you should get something like:
+```bash
 $ ./hw
 >> Dancer server 11757 listening on http://0.0.0.0:3000
-===
+```
 
-See what happens when you visit the url with your browser.
-If this doesn't work, replace '0.0.0.0' with 'localhost' or the IP address
-of the machine you're working on.
+See what happens when you visit the url with your browser. If this doesn't work, replace '0.0.0.0' with 'localhost' or the IP address of the machine you're working on.
 
 
 Things to note about the code:
