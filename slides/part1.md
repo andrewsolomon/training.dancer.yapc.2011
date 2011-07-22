@@ -177,30 +177,40 @@ Exercise 4: Template Toolkit
 Now from the previous exercise you are generating HTML from 
 within a script. For a small and simple HTML file that's ok, but
 if it gets any bigger it will be very difficult to read the 
-script picking out the html from the perl or vice versa.
+script picking out the HTML from the Perl or vice versa.
 
 This is what a Template is for - you can separate out the 
-HTML into a different file with tags [% date %] and [% time %]
-which will be filled in by the variables in the perl script.
+HTML into a different file with <i>directives</i> ``` [% date %] ``` and ``` [% time %] ```
+which will be filled in by the variables in the Perl script.
 
-Now, copy part1/ex3/step1.pl to part1/ex4/step1.pl
+Now,
 
-and change the  
+```
+$ cp part1/ex3/step1.pl part1/ex4/step1.pl
+```
 
+and we'll now change the  
+
+```
     get '/time' 
+```
 
 route handler. Instead of returning an HTML string, return
 
+```
     template 'date_time' => { time => $dt->hms, date => $dt->ymd };
-or 
+```
+(or 
+```
     template('date_time', { time => $dt->hms, date => $dt->ymd });
-
+```
 if it makes you feel safer :)
 
 
 At the top of the file, add these configuration parameters telling
 Dancer you'll be using a template file.
 
+```
  set engines => {
      template_toolkit => 
      {
@@ -210,23 +220,26 @@ Dancer you'll be using a template file.
  };
  set template  => 'template_toolkit';
 
+```
 
-Now, running the script and pointing your browser at
-http://10.5.16.131:3000/time 
-will give you a runtime errors saying that it's looking
-for the file
-code/part1/ex4/views/date_time.tt
+
+Now, running the script and pointing your browser at ``` http://0.0.0.0:3000/time ```
+will give you runtime errors saying that it's looking for the file
+
+``` part1/ex4/views/date_time.tt ```
 
 To fix this, create the file with any HTML content you like, 
-and making use of the strings [% date %] and [% time %]
-which will be filled in by Dancer::Template
+and making use of the strings ``` [% date %] ``` and ``` [% time %] ```
+which will be filled in by ``` Dancer::Template ```
 
-Run it and make sure it works.
-The things to note about this:
-- 'template 'date_time'' means 'look for views/date_time.tt in the views directory
-- the hash ref  { time => $dt->hms, date => $dt->ymd } says
-'Whenever you see [% time %] replace it with $dt->hms and
-whenever you see [% date %] replace it with  $dt->ymd
+Run it and make sure it works. The things to note about this:
+
+* ``` template 'date_time' ``` means "look for ``` views/date_time.tt ``` in the ``` views ``` directory
+* the hash ref ``` { time => $dt->hms, date => $dt->ymd }  ``` says
+"Whenever you see ``` [% time %] ``` replace it with ``` $dt->hms ``` and
+whenever you see ``` [% date %] ``` replace it with  $dt->ymd
+
+For further information about Template Toolkit directives visit this page http://template-toolkit.org/docs/manual/Directives.html
 
 
 Exercise 4 Step 2 - Banana skin 
