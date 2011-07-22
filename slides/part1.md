@@ -242,19 +242,19 @@ whenever you see ``` [% date %] ``` replace it with ``` $dt->ymd ```
 For further information about Template Toolkit directives visit this page http://template-toolkit.org/docs/manual/Directives.html
 
 
-Exercise 4' (2 steps back and slip on a banana skin)
-----------------------------------------------------
+<b> Exercise 4' (2 steps back and slip on a banana skin) </b>
+
 ```
 $ cp part1/ex4/step1.pl part1/ex4/step2-back.pl
 ```
 
 and swap the order of the ``` set template ``` and ``` set engines ``` calls. 
 
-<b>Q:<\b> What happens?
+<b>Q: <\b> What happens?
 
 ... It's a Dancer bug - no-one's perfect!
 
-========================
+
 
 Exercise 5. Route Type 1: parameterised base url
 =================================================
