@@ -376,51 +376,49 @@ and say 'Hello dynamic Things!'
 
 
 
-Exercise 7. Route Type 3: POST query 
+Exercise 7: Route Type 3 - POST query 
 =======================================
 
+```
 $ cp -r part1/ex6 part1/ex7
+```
 
 You've just done two experiments with dynamically generating content of the
 web page based on information the user provided. In both cases, this
-information wound up in the url.
+information wound up in the URL.
 
 This is sometimes not optimal, for example when the string provided by
-the user is their password (and therefore visible in the url), 
-or longer than the maximum url length (2083 characters for IE)
+the user is their password (and therefore visible in the URL), 
+or longer than the maximum URL length (2083 characters for IE)
 
 The solution to this is to use a POST request, instead of a 
 GET request. In a POST request, the query parameters are 
-in the HTTP message's header, rather than the url.
+in the HTTP message's header, rather than the URL.
 
 With a POST we need to do two things. First of all, provide a POST
 form in the template views/hello-adj-index.tt - after the get form.
------
+
+```
 <h1>POST form for accessing the hello-adj-post method</h1>
 <form action="hello-adj" method="post">
   Adjective: <input type="text" name="adjective" /><br />
   <input type="submit" value="Submit" />
 </form>
------
+```
 
+And then in the ``` part1/ex7/step1.pl ``` controller add the ``` hello-adj ``` POST method
 
-And then in the ./code/part1/ex7/step1.pl controller add the "hello-adj"
-*post* method
-
-----------
+```
 
 post '/hello-adj' => sub {
   my $params = params();
     return
   "<h1>Hello ".params->{adjective}." Things!</h1>".
 };
---------
 
-Run it and see that if you visit the website at 
+```
 
-http://localhost:3000/
-enter a name like 'dynamic' *in the post form* and click submit, it will 
-display the page 
+Run it and see that if you visit the website at  http://localhost:3000/ enter a name like 'dynamic' <i>in the post form</i> and click submit, it will  display the page 
 http://localhost:3000/hello-adj
 and say 'Hello dynamic Things!'
 
