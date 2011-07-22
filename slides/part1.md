@@ -55,11 +55,13 @@ Things to note about the code:
 
 * ```'use Dancer'``` brings along ```'use strict'``` and ```'use warnings'``` so  we don't need to type them.
 * The three settings
+
 ```
   set logger    => 'console';
   set log       => 'debug';
   set show_errors => 1;
 ```
+
 are telling it to keep you informed of what the problem is when
 things go wrong to make sure you get as much information as possible.
 You'll want to log errors to a file once it's a public website.
