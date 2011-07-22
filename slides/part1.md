@@ -4,12 +4,12 @@ Elementary Web Application
 Concepts
 --------
 
-* Route handler - the mapping of a path to a subroutine
-* Route types:
-    1. /link/:like/:this where all the data is in the url but not a GET
-    2. GET query 
-    3. POST query
-* Template
+* <b>Route handler</b> - the mapping of a url to a subroutine
+* <b>Route types</b>:
+    1. ```http://example.com/link/:like/:this``` where all the data is in the url but not a GET
+    2. GET query ```http://example.com/more?like=this&orlike=that```
+    3. POST query ```http://example.com/justthis```
+* <b>Template</b> - HTML with embedded with ```[% directives %]``` 
 
 
 We assume you've done a static website. A simple HTML page.
@@ -21,7 +21,7 @@ take you from one static page to another. E.g.
 
 More interesting is our website where clicking on a button
 will do some data mining and generate a new page on the fly.
-That's a 'Web Application' and this class will take you through
+That's a '<b>Web Application</b>' and this class will take you through
 putting together a web application.
 
 
