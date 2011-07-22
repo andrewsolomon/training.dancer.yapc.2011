@@ -361,7 +361,7 @@ get '/hello-adj' => sub {
 Run it and see that if you visit the website at 
 
 ```
-http://0.0.0.:3000/
+http://0.0.0.0:3000/
 ```
 
 and enter a name like 'dynamic' and click submit, it will 
