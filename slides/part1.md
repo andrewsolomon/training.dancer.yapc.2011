@@ -44,7 +44,7 @@ Dancer->dance;
 Running it at the command line you should get something like:
 
 ```
-$ ./hw
+$ ./step1.pl
 >> Dancer server 11757 listening on http://0.0.0.0:3000
 ```
 

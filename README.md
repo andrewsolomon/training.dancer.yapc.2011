@@ -13,7 +13,7 @@ Prerequisites
 
 * Basic Perl knowledge
 * Basic HTML/HTTP knowledge
-* Task::Dancer and a laptop if you'd like to code along - `$ cpan Task::Dancer`
+* A laptop with Perl, Task::Dancer and Data::Types
 
 Tutor
 -----
@@ -23,13 +23,9 @@ Andrew Solomon <andrew.solomon@net-a-porter.com>
 FIXMEs from the class
 ===================
 
-1. Need to install Data::Types
 
-2. part 1 ex 1 asolomon: ./hw should probably be ./step1.pl though
 
-3. Is <h1> really prettier? (Anne)
 
-4.<<dakkar>> asolomon: «get '/time'» in ex4 should be «get '/date_time'»?
 
 5. 12:24 < rufus> just under the template file config, it says /time instead of 
                /date_time
@@ -51,9 +47,8 @@ See also the REST spec.(see Joel's talk about HTTP spec's implications)
 12:38 < dakkar>  http://foo/bar?q=1&q=2&q=3
 
 
-8. 
-
-13:10 < rufus> oh, dancer -a is nice
+8.  13:10 < rufus> oh, dancer -a is nice
 13:11 < asolomon> yes, i should tell the students that at the end so they can 
                   see how much easier it would have been:)
 
+9. AndrewB : consistency of 
