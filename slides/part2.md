@@ -255,3 +255,14 @@ you click on the airport name.
 
 * <b>Exercise 7</b> Place another link to the right of each link to get the airports
 near this one (1 degree circumference)
+
+... and the morning after
+=========================
+* <b>Exercise 10</b> See how much easier it would have been if you'd let dancer lead:
+```
+$ mkdir part3
+$ cd part3
+$ man dancer
+$ dancer -a Airport
+...
+```
