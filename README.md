@@ -18,7 +18,7 @@ Prerequisites
 Tutor
 -----
 
-Andrew Solomon <andrew.solomon@net-a-porter.com>
+Andrew Solomon
 
 FIXMEs from the class
 ===================
