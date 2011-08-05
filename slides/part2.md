@@ -259,6 +259,7 @@ near this one (1 degree circumference)
 ... and the morning after
 =========================
 * <b>Exercise 10</b> See how much easier it would have been if you'd let dancer lead:
+
 ```
 $ mkdir part3
 $ cd part3
