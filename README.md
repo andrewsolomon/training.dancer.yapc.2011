@@ -31,11 +31,6 @@ FIXMEs from the class
                /date_time
 
 
-6. dakkar: GET is idempotent (see HTTP rfc), POST is not (e.g sessions). 
-That is the difference
-POST hiding things from the url is 
-See also the REST spec.(see Joel's talk about HTTP spec's implications)
-
 7. 
 12:37 < dakkar> asolomon: re ex8: why comma separated? would multi-valued 
                 params be more interesting?
