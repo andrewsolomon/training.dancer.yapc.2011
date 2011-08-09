@@ -387,7 +387,7 @@ You've just done two experiments with dynamically generating content of the
 web page based on information the user provided. In both cases, this
 information wound up in the URL.
 
-Putting the user's information into the url isn't the correct approach when the action changes the state of the server, or the information being passed in exceeds the limit on the url length. In this case we put the user's information in the header of the HTTP request, rather than the url.  This is called a POST request. For a more detailed explanation of the difference between GET and POST see http://www.cs.tut.fi/~jkorpela/forms/methods.html
+Putting the user's information into the url isn't the correct approach when the action changes the state of the server, or the information being passed in exceeds the limit on the url length (for a detailed explanation of why this is, see http://www.cs.tut.fi/~jkorpela/forms/methods.html) In this case we put the user's information in the header of the HTTP request, rather than the url.  This is called a POST request. 
 
 With a POST we need to do two things. First of all, provide a POST
 form in the template views/hello-adj-index.tt - after the get form.
