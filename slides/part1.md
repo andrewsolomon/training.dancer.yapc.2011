@@ -387,13 +387,7 @@ You've just done two experiments with dynamically generating content of the
 web page based on information the user provided. In both cases, this
 information wound up in the URL.
 
-This is sometimes not optimal, for example when the string provided by
-the user is their password (and therefore visible in the URL), 
-or longer than the maximum URL length (2083 characters for IE)
-
-The solution to this is to use a POST request, instead of a 
-GET request. In a POST request, the query parameters are 
-in the HTTP message's header, rather than the URL.
+Putting the user's information into the url isn't the correct approach when the action changes the state of the server, or the information being passed in exceeds the limit on the url length. In this case we put the user's information in the header of the HTTP request, rather than the url.  This is called a POST request. For a more detailed explanation of the difference between GET and POST see http://www.cs.tut.fi/~jkorpela/forms/methods.html
 
 With a POST we need to do two things. First of all, provide a POST
 form in the template views/hello-adj-index.tt - after the get form.
