@@ -14,9 +14,9 @@ structure, separating things out a bit more so that the code is easy to
 understand and maintain.
 
 The structure we use in this section is the Model-View-Controller (MVC)
-framework. A model is the code which access and manipulates the data. The
-view is (in our case) the HTML/Template Toolkit file which dictates how
-the output is presented to the user.  The controller is the code which
+framework. A <b>model</b> is the code which accesses and manipulates the data. The
+<b>view</b> is (in our case) the HTML/Template Toolkit file which dictates how
+the output is presented to the user.  The <b>controller</b> is the code which
 connects a URL with a view, and uses a module to populate a view with
 the appropriate data.
 
