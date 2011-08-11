@@ -46,4 +46,4 @@ FIXMEs from the class
 13:11 < asolomon> yes, i should tell the students that at the end so they can 
                   see how much easier it would have been:)
 
-9. AndrewB : consistency of 
+9. AndrewB : consistency of url
