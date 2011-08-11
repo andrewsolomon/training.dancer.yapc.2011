@@ -13,7 +13,16 @@ Prerequisites
 
 * Basic Perl knowledge
 * Basic HTML/HTTP knowledge
-* A laptop with Perl, Task::Dancer and Data::Types
+
+You'll get the most out of this if you...
+-----------------------------------------
+
+* Bring a laptop with Perl installed
+* Install Task::Dancer (somewhat large) or install Dancer and Dancer::Template::TemplateToolkit
+* Install Data::Types
+* Check that excercise $x runs `perl examples/ex-x.pl`. <Andrew FIXME :)>
+  If not, install any prerequisits we forgot!
+* Checkout a copy of this talk/code `git clone git://github.com/andrewsolomon/YAPC2011DancingLesson.git` <Andrew maybe tar the whole thing and provide as download?>
 
 Tutor
 -----
