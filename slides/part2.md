@@ -9,7 +9,7 @@ Our project is to implement a single page website like this:
 
 
 It will be similar to the elementary website we just developed, but
-because it is larger and more complex we'll need to give it more
+because it's larger and more complex we'll need to give it more
 structure, separating things out a bit more so that the code is easy to
 understand and maintain.
 
