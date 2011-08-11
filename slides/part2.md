@@ -256,9 +256,9 @@ you click on the airport name.
 * <b>Exercise 7</b> Place another link to the right of each link to get the airports
 near this one (1 degree circumference)
 
-... and the morning after
+... and dancing on speed
 =========================
-* <b>Exercise 10</b> See how much easier it would have been if you'd let dancer lead:
+* <b>Exercise 10</b> Let dancer lead this time:
 
 ```
 $ mkdir part3
