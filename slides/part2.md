@@ -4,7 +4,7 @@ Implementing an MVC web application
 Our project is to write a website as a single page
 of the format:
 
-![Alt text](images/index.png "this is it")
+![Alt text](https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/index.png "this is it")
 
 
 http://0.0.0.0:3000/
