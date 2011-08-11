@@ -42,8 +42,5 @@ FIXMEs from the class
 12:38 < dakkar>  http://foo/bar?q=1&q=2&q=3
 
 
-8.  13:10 < rufus> oh, dancer -a is nice
-13:11 < asolomon> yes, i should tell the students that at the end so they can 
-                  see how much easier it would have been:)
 
 9. AndrewB : consistency of url
