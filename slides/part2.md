@@ -4,33 +4,10 @@ Implementing an MVC web application
 Our project is to write a website as a single page
 of the format:
 
-http://0.0.0.0:3000/
+![Index Page](https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/index.png "Index page")
 
----
-<p>
-Search for airports matching [       ]
-</p>
-[Submit]
+![Results Page](https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/results.png "Results page")
 
----
-
-enter Sydney and the page will look like this
-
-http://0.0.0.0:3000/results?searchstring=Sydney
-
----
-Search for airports matching [Sydney]
-[Submit]
-
-Found 3 airports from 2948324
-
-<ul>
-<li>Sydney / J.A. Douglas McCurdy Airport, CA</li>
-<li>Sydney Bankstown Airport, AU</li>
-<li>Sydney Kingsford Smith International Airport, AU</li>
-</ul>
-
----
 
 It will be similar to the elementary website we just developed, but
 because it is larger and more complex we'll need to give it more
