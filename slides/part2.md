@@ -1,8 +1,7 @@
 Implementing an MVC web application
 ====================================================
 
-Our project is to write a website as a single page
-of the format:
+Our project is to implement a single page website like this:
 
 ![Index Page](https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/index.png "Index page")
 
