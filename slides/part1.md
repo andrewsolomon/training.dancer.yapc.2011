@@ -9,15 +9,9 @@ Concepts
     1. ```http://example.com/link/:like/:this``` where all the data is in the url but not a GET
     2. GET query ```http://example.com/more?like=this&orlike=that```
     3. POST query ```http://example.com/justthis```
-* <b>Template</b> - HTML files embedded with ```[% directives %]``` 
-
-
-We assume you've done a static website. A simple HTML page. The only active part of a static website is a link to
-take you from one static page to another. For example
-```<a href="http://www.example.com">Example</a>```
-
-More interesting is a website where clicking on a button will do some data mining and generate a new page on the fly.
-That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
+* <b>Static Web Page</b> - basically just some hard coded HTML
+* <b>Web Application</b> - a website where clicking on a button will do some data mining and generate new HTML on the fly.
+* <b>Template</b> - HTML files embedded with ```[% directives %]``` containing data generated on the fly
 
 
 <b>&raquo;Note</b> In case you're an a hurry to implement the search engine in part2, the exercises in part1 which you *must* do first are preceeded by a &raquo;raquo.
