@@ -20,7 +20,7 @@ More interesting is a website where clicking on a button will do some data minin
 That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
 
 
-Exercise 1 - An index route
+Exercise 1 - An index route (*)
 ==============================
 Create the script ```part1/ex1/step1.pl```
 
@@ -113,7 +113,7 @@ and change the output to be a bit prettier using HTML tags:
 ```<h1>Hello World!</h1>```
 
 
-Exercise 2: A non-index route
+Exercise 2: A non-index route (*)
 ==============================
 
 ```
@@ -132,7 +132,7 @@ which returns ``` <h1>Turn it all around people!</h1> ```
 
 
 
-Exercise 3: Non-static pages
+Exercise 3: Non-static pages (*)
 ============================
 
 We've shown how to write static pages, but that's no better than plain HTML. First, 
@@ -171,7 +171,7 @@ my $s_date = $dt->ymd; my $s_time = $dt->hms;
 ```
 
 
-Exercise 4: Template Toolkit
+Exercise 4: Template Toolkit (*)
 =============================
 
 Now from the previous exercise you are generating HTML from 
@@ -322,7 +322,7 @@ URL.  It would be easier for them to type it into a field in a web page.
 The two approaches for implementing this are the GET and POST type forms. 
 
 
-Exercise 6: Route type 2 - GET query 
+Exercise 6: Route type 2 - GET query (*)
 ======================================
 
 ```
@@ -421,7 +421,7 @@ http://localhost:3000/hello-adj
 and say 'Hello dynamic Things!'
 
 
-Exercise 8: Dynamic Content + Template Toolkit
+Exercise 8: Dynamic Content + Template Toolkit *
 ==============================================
 
 Implement a new GET query so that if the user enters a comma-separated list of adjectives it prints out a line for each one.
