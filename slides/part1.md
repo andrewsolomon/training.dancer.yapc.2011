@@ -608,7 +608,7 @@ $ cp -r part1/ex8 part1/ex10
 * Change ``step1.pl`` so that it sends exactly the list returned by ``params->{adjective}`` to the template
 
 ```
-template 'hello-multiple-adj' => { adjective_list => $adjectives  };
+template 'hello-multiple-adj' => { adjective_list =>  params->{adjective} };
 ```
 
 What you'll have learnt from this is that multiple inputs of the same name are presented to the controller in an array ref of that name.
