@@ -20,6 +20,11 @@ More interesting is a website where clicking on a button will do some data minin
 That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
 
 
+&raquo; Note
+------------
+In case you're an a hurry to implement the search engine, the exercises in this
+part which you *must* do first are preceeded by a &raquo; raquo.
+
 &raquo; Exercise 1 - An index route
 ==============================
 Create the script ```part1/ex1/step1.pl```
@@ -243,7 +248,7 @@ For further information about Template Toolkit directives visit this page http:/
 
 
 Exercise 4': Dancer bug
-========================
+-----------------------
 
 <img src="https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg" alt="Banana skin" width="200" />
 
@@ -422,7 +427,7 @@ and say 'Hello dynamic Things!'
 
 
 &raquo; Exercise 8: Dynamic Content + Template Toolkit
-==============================================
+-------------------------------------------------------
 
 Implement a new GET query so that if the user enters a comma-separated list of adjectives it prints out a line for each one.
 
@@ -550,7 +555,7 @@ perldoc Template::Manual::Directives
 
 
 Exercise 9': Wantarray problem
-===============================
+-------------------------------
 
 <img src="https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg" alt="Banana skin" width="200" />
 
