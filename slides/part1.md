@@ -20,10 +20,7 @@ More interesting is a website where clicking on a button will do some data minin
 That's an example of a '<b>Web Application</b>' and this class will take you through putting one together.
 
 
-&raquo; Note
-------------
-In case you're an a hurry to implement the search engine, the exercises in this
-part which you *must* do first are preceeded by a &raquo; raquo.
+*&raquo;Note* In case you're an a hurry to implement the search engine in part2, the exercises in part1 which you *must* do first are preceeded by a &raquo;raquo.
 
 &raquo; Exercise 1 - An index route
 ==============================
