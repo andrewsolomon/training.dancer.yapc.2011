@@ -204,11 +204,13 @@ $ cp -r ex2 ex3
 
 Instead of just writing 'Found X airports from 6372'
 below the search result it would be more informative to say
+
 ```
 'Found X airports from 6372 - searching by location'
 ```
 
 or
+
 ```
 'Found X airports from 6372 - searching by name'
 ```
