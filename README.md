@@ -23,8 +23,9 @@ You'll get the most out of this if you...
 * < Andrew FIXME :) > Check that exercise $x runs `perl examples/ex-x.pl`. (If it doesn't run, install any prerequisits we forgot!)
 * Checkout a copy of this talk/code `git clone git://github.com/andrewsolomon/YAPC2011DancingLesson.git` < Andrew maybe tar the whole thing and provide as download? >
 
-*Teacher:*  Andrew Solomon
-*Teaching Assistants:* Adam Taylor, Liz Goldstein
+<b>Teacher:</b>  Andrew Solomon
+
+<b>Teaching Assistants:</b> Adam Taylor, Liz Goldstein
 
 FIXMEs from the class
 ===================
