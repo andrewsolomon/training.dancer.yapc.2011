@@ -587,3 +587,16 @@ to find out more, read the Dancer::Request implementation of the ``` params ``` 
 ```
 $ perldoc -f wantarray
 ```
+
+
+Exercise 10: Multi-value parameters
+------------------------------------
+
+As a modification of Exercise 8, provide the user with three fields of the same name, so that instead of typing a comma separated string like 'red,green,blue' they would put each in a different field.
+
+```
+$ cp -r part1/ex8 part1/ex10
+```
+
+Now change ``ex10/step1.pl`` 
+
