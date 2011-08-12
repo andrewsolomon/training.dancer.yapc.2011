@@ -20,11 +20,7 @@ get '/' => sub {
 };
 
 get '/hello-adj' => sub {
-    my $adjectives = params->{adjective};
-
-    #my @adj_list = split (/,/, $adjectives);
-    #template 'hello-multiple-adj' => { adjective_list => \@adj_list };
-    template 'hello-multiple-adj' => { adjective_list => $adjectives  };
+    template 'hello-multiple-adj' => { adjective_list =>  params->{adjective} };
 };
 
 
