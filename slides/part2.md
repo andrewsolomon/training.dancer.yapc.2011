@@ -235,13 +235,13 @@ Also - turn 'X' into the number of airports found.
 Dance the night away...
 ===============================
 
-* <b>Exercise 5</b> Make the search get_name_matching_airports case insensitive
-and update its test script accordingly
+<!--  * <b>Exercise 5</b> Make the search get_name_matching_airports case insensitive
+and update its test script accordingly -->
 
-* <b>Exercise 6</b> For each airport, if it has a home_link, make it a link when
+* <b>Exercise 5</b> For each airport, if it has a home_link, make it a link when
 you click on the airport name.
 
-* <b>Exercise 7</b> Place another link to the right of each link to get the airports
+* <b>Exercise 6</b> Place another link to the right of each link to get the airports
 near this one (1 degree circumference)
 
 ... and dancing on speed
