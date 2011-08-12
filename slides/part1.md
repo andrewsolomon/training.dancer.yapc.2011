@@ -313,14 +313,13 @@ Implement this and see that it works.
 * This technique is great for auto-generated URLs which might populate
 a site-map for search engines to explore your website.
 
-* It's much prettier as a URL than the two other approaches below.
 
 =====
 
 We've just seen how we can use parameterised URLs for generating content,
-but this is not the way for implementing pages which take their parameters
-from human input. You don't want them to have to type their name into the
-URL.  It would be easier for them to type it into a field in a web page.
+but this is not the way to implement pages which take their parameters
+from human input. You don't want the user to have to type their name into the
+url!  It would be easier for them to type it into a field in a web page.
 The two approaches for implementing this are the GET and POST type forms. 
 
 
