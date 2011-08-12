@@ -351,7 +351,7 @@ get '/' => sub {
 ```
 
 
-* In ``` part1/ex6/step1.pl ``` add a ``` /hello-adj-index ``` method
+* In ``` part1/ex6/step1.pl ``` add a ``` /hello-adj ``` method
 
 ```
 get '/hello-adj' => sub {
