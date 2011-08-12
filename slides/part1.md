@@ -243,8 +243,7 @@ For further information about Template Toolkit directives visit this page http:/
 
 
 <b> Exercise 4'</b>
-
-![BananaSkin1](https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg "Banana skin")
+<img src="https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg" alt="Banana skin" width="200" />
 
 
 ```
