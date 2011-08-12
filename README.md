@@ -63,6 +63,7 @@ This provides you with the basic toolkit of skills for implementing a web site.
 
 The application you'll be implementing is an airport search engine, and the exercises illustrate how the code should be structured to make the site easy to change and maintain.  If you just want to cut to the chase, you can skip some of the exercises as follows:
 
-* Quick and Dirty Dancing
+<b>Quick and Dirty Dancing</b>
+
 - Part 1: Ex 1 - 4, 6, 8
 - Part 2: Ex 1 - 4
