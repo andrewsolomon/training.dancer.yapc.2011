@@ -163,9 +163,13 @@ A) Toss in the ingredients
 $ cp -r ex1 ex2
 $ cp -r airport-toolkit/* ex2
 ```
+Add to ``` config.yml ``` 
 
-* Add to ``` config.yml ``` 
-``` airports_csv: 'data/iata_airports.csv' ```
+the line
+
+``` 
+airports_csv: 'data/iata_airports.csv' 
+```
 
 B) Edit ``` Airport::Controller ``` so that it loads the array of 
 airports generated with ``` Airport::Data::parse_airports ``` 
