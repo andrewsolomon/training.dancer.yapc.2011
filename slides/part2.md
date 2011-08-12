@@ -157,7 +157,7 @@ Exercise 2: Start using the Toolkit
 
 In this exercise we start using the airport-toolkit
    
-a) Toss in the ingredients
+A) Toss in the ingredients
 
 ```
 $ cp -r ex1 ex2
@@ -167,7 +167,7 @@ $ cp -r airport-toolkit/* ex2
 * Add to ``` config.yml ``` 
 ``` airports_csv: 'data/iata_airports.csv' ```
 
-b) Edit ``` Airport::Controller ``` so that it loads the array of 
+B) Edit ``` Airport::Controller ``` so that it loads the array of 
 airports generated with ``` Airport::Data::parse_airports ``` 
 into a package variable which will be used in 
 the search function.
@@ -183,7 +183,7 @@ pass into Airport::Data::parse_airports is setting('airports_csv')
 subroutine so it is only populated the first time the ``` Airport::Controller ```
 module is loaded, called rather than every time we do a search.
 
-c) Add the number of airports line to the top of the ``` index/results ``` page
+C) Add the number of airports line to the top of the ``` index/results ``` page
 as in the example 'screenshots' above using the number of 
 elements in the array value being passed to the template.
 
