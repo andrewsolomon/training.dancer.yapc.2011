@@ -18,6 +18,12 @@ Concepts
 
 &raquo; Exercise 1 - An index route
 ==============================
+Create a directory
+
+```
+$ mkdir YAPC2011DancingLesson/exercises/part1/ex1
+```
+
 Create the script ```part1/ex1/step1.pl```
 
 ```perl
