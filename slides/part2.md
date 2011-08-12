@@ -185,7 +185,7 @@ pass into Airport::Data::parse_airports is setting('airports_csv')
 
 * the array of airports should be declared and populated outside a
 subroutine so it is only populated the first time the ``` Airport::Controller ```
-module is loaded, called rather than every time we do a search.
+module is loaded rather than every time we do a search.
 
 C) Add the number of airports line to the top of the ``` index/results ``` page
 as in the example 'screenshots' above using the number of 
