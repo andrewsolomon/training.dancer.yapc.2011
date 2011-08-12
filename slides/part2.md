@@ -196,6 +196,8 @@ elements in the array value being passed to the template.
 Exercise 3:  Taking the hint
 ============================
 
+Decide on whether to search for airports by location or by name by analysing the user's input.
+
 ```
 $ cp -r ex2 ex3
 ```
@@ -211,7 +213,7 @@ or
 'Found X airports from 6372 - searching by name'
 ```
 
-Decide which method is appropriate using ``` Airport::Data::parse_search_string ``` to process the user's input.
+Use ``` Airport::Data::parse_search_string ``` to process the user's input.
 
 
 Exercise 4: Give up on dancing metaphors
