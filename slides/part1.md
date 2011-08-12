@@ -149,7 +149,7 @@ the time.
 That is:
 
 ```
-http://localhost:3000/time
+http://0.0.0.0:3000/time
 ```
 
 Displays a page containing: 
@@ -417,8 +417,8 @@ post '/hello-adj' => sub {
 
 ```
 
-Run it and see that if you visit the website at  http://localhost:3000/ enter a name like 'dynamic' <i>in the post form</i> and click submit, it will  display the page 
-http://localhost:3000/hello-adj
+Run it and see that if you visit the website at  http://0.0.0.0:3000/ enter a name like 'dynamic' <i>in the post form</i> and click submit, it will  display the page 
+http://0.0.0.0:3000/hello-adj
 and say 'Hello dynamic Things!'
 
 
@@ -473,12 +473,12 @@ $ cp -r part1/ex8 part1/ex9
 $ rm part1/ex9/views/hello-multiple-adj.tt
 ```
 
-Write a webpage http://localhost:3000/show-parameters 
+Write a webpage http://0.0.0.0:3000/show-parameters 
 which displays everything it receives as a parameter.
 
 For example:
 
-http://localhosit:3000/show-parameters?x=1&y=2&z=t
+http://0.0.0.0:3000/show-parameters?x=1&y=2&z=t
 
 would display
 
