@@ -211,9 +211,8 @@ or
 'Found 3 airports from 6372 - searching by name'
 ```
 
-Using ``` Airport::Data::parse_search_string ``` decide which method
-is appropriate depending on the user's input and add that to
-the statement above.
+Decide which method is appropriate using ``` Airport::Data::parse_search_string ``` to process the user's input.
+
 
 Exercise 4: Deciding on your partner
 ====================================
