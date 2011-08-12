@@ -9,7 +9,7 @@ Talk and tutorial given at YAPC::EU 2011 about Dancer.
 What's Dancer?
 --------------
 
-Dancer is a micro web framework, inspired by the Ruby framework, Sinatra.
+Dancer is a micro 'web framework' - a toolkit for developing a dynamic web application.  It is inspired by the Ruby framework, Sinatra.
 
 Prerequisites
 -------------
@@ -50,3 +50,19 @@ YAPC2011DancingLesson/solutions/part1/ex1
 YAPC2011DancingLesson/solutions/part1/ex2
 ...
 ```
+
+Paths to take
+-------------
+The lesson is divided into two sections:
+
+* Part 1: https://github.com/andrewsolomon/YAPC2011DancingLesson/blob/master/slides/part1.md 
+
+This provides you with the basic toolkit of skills for implementing a web site. 
+
+* Part 2: https://github.com/andrewsolomon/YAPC2011DancingLesson/blob/master/slides/part2.md
+
+The application you'll be implementing is an airport search engine, and the exercises illustrate how the code should be structured to make the site easy to change and maintain.  If you just want to cut to the chase, you can skip some of the exercises as follows:
+
+* Quick and Dirty Dancing
+- Part 1: Ex 1 - 4, 6, 8
+- Part 2: Ex 1 - 4
