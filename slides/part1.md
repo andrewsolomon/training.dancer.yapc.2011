@@ -598,5 +598,16 @@ As a modification of Exercise 8, provide the user with three fields of the same 
 $ cp -r part1/ex8 part1/ex10
 ```
 
-Now change ``ex10/step1.pl`` 
+* Change the input template ``views/hello-adj-index.tt`` giving it *three* identical input lines:
 
+```
+<input type="text" name="adjective" /><br />
+<input type="text" name="adjective" /><br />
+<input type="text" name="adjective" /><br />
+```
+
+* Change ``ex10/step1.pl`` so that it sends exactly the list returned by ``params->{adjective}`` to the template
+
+```
+template 'hello-multiple-adj' => { adjective_list => $adjectives  };
+```
