@@ -101,7 +101,7 @@ my $hwsub = sub {
 };
 ```
 
-before calling '```get```' on $hwsub.
+before calling '```get```' on `$hwsub`.
 
 
 Finally,
