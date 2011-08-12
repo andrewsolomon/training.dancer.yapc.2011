@@ -242,7 +242,7 @@ whenever you see ``` [% date %] ``` replace it with ``` $dt->ymd ```
 For further information about Template Toolkit directives visit this page http://template-toolkit.org/docs/manual/Directives.html
 
 
-Exercise 4': Banana skin
+Exercise 4': Dancer bug
 ========================
 
 <img src="https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg" alt="Banana skin" width="200" />
@@ -549,8 +549,8 @@ perldoc Template::Manual::Directives
 ```
 
 
-Exercise 9': Banana skin
-========================
+Exercise 9': Wantarray problem
+===============================
 
 <img src="https://github.com/andrewsolomon/YAPC2011DancingLesson/raw/master/slides/images/cybergedeon_warning_banana_skin.jpg" alt="Banana skin" width="200" />
 
