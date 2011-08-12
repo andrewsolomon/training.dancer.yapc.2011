@@ -17,14 +17,14 @@ Prerequisites
 * Basic Perl knowledge
 * Basic HTML/HTTP knowledge
 
-You'll get the most out of this if you...
------------------------------------------
+Preparation
+-----------
 
 * Bring a laptop with Perl installed
 * Install ```Task::Dancer``` (somewhat large) or install ```Dancer``` and ```Dancer::Template::TemplateToolkit```
 * Install ```Data::Types```
 * *Either* checkout a copy of this talk ```git clone git://github.com/andrewsolomon/YAPC2011DancingLesson.git``` 
-* *Or* download and untar ```https://github.com/andrewsolomon/YAPC2011DancingLesson/blob/master/YAPC2011DancingLesson.tar```
+* *Or* download and untar https://github.com/andrewsolomon/YAPC2011DancingLesson/blob/master/YAPC2011DancingLesson.tar
 * Check that everything works:
 
 ```
@@ -34,4 +34,19 @@ $ ./bin/search_airports --matching syd
 
 If it doesn't run, install any prerequisites we forgot!
 
+Instructions
+------------
+Do your exercises in the directories
 
+```
+YAPC2011DancingLesson/exercises/part1/ex1 
+YAPC2011DancingLesson/exercises/part1/ex2
+...
+```
+and if you get stuck, you'll find solutions in 
+
+```
+YAPC2011DancingLesson/solutions/part1/ex1 
+YAPC2011DancingLesson/solutions/part1/ex2
+...
+```
