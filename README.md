@@ -1,7 +1,7 @@
 Learning to Dance
 =================
 
-Talk and tutorial given at YAPC::EU 2011, for the beginner track, about Dancer.
+Talk and tutorial given at YAPC::EU 2011 about Dancer.
 
 <b>Teacher:</b> Andrew Solomon <b>Teaching Assistants:</b> Adam Taylor, Liz Goldstein
 
