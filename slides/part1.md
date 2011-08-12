@@ -299,10 +299,10 @@ to
 ```
 
 Then navigate to the page: 
-```  http://10.1.1.5:3000/hello/funny ```
+```  http://0.0.0.0:3000/hello/funny ```
 
 or 
-```  http://10.1.1.5:3000/hello/interesting ```
+```  http://0.0.0.0:3000/hello/interesting ```
 
 Implement this and see that it works.
 
