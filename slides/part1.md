@@ -323,7 +323,7 @@ url!  It would be easier for them to type it into a field in a web page.
 The two approaches for implementing this are the GET and POST type forms. 
 
 
-&raquo; Exercise 6: Route type 2 - GET query 
+&raquo; Exercise 6: Route Type 2 - GET query 
 ======================================
 
 ```
