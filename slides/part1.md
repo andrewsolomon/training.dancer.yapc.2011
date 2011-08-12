@@ -143,13 +143,13 @@ We've shown how to write static pages, but that's no better than plain HTML. Fir
 $ cp part1/ex1/step2-forward.pl part1/ex3/step1.pl
 ```
 
-and then add a new route handler 'date_time' which shows not just 'Hello World', but also
+and then add a new route handler 'time' which shows not just 'Hello World', but also
 the time.
 
 That is:
 
 ```
-http://localhost:3000/date_time
+http://localhost:3000/time
 ```
 
 Displays a page containing: 
