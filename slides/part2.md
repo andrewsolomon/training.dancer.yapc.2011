@@ -200,26 +200,31 @@ Exercise 3:  Taking the hint
 $ cp -r ex2 ex3
 ```
 
-Instead of just writing 'Found 3 airports from 6372'
+Instead of just writing 'Found X airports from 6372'
 below the search result it would be more informative to say
 ```
-'Found 3 airports from 6372 - searching by location'
+'Found X airports from 6372 - searching by location'
 ```
 
 or
 ```
-'Found 3 airports from 6372 - searching by name'
+'Found X airports from 6372 - searching by name'
 ```
 
 Decide which method is appropriate using ``` Airport::Data::parse_search_string ``` to process the user's input.
 
 
-Exercise 4: Deciding on your partner
-====================================
+Exercise 4: Give up on dancing metaphors
+=========================================
+This is where we display the correct search results
 
-Now use ```Airport::Search get_name_matching_airports ```
-or ``` get_latlong_matching_airports ``` to populate the 
-searchresults with the correct data.
+```
+$ cp -r ex3 ex4
+```
+
+Use ```Airport::Search::get_name_matching_airports ```
+or ```Airport::Search::get_latlong_matching_airports ``` to populate the 
+search results with the correct data.
 
 Also - turn 'X' into the number of airports found.
 
