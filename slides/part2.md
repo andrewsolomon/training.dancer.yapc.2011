@@ -193,8 +193,8 @@ elements in the array value being passed to the template.
 
 
 
-Exercise 3:  Dancing with the data
-====================================
+Exercise 3:  Taking the hint
+============================
 
 ```
 $ cp -r ex2 ex3
