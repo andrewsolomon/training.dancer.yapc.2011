@@ -1,4 +1,4 @@
-#!/opt/xt/xt-perl/bin/perl -Ilib
+#!/usr/bin/perl -Ilib
 
 
 use Dancer;

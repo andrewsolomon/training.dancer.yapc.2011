@@ -1,4 +1,4 @@
-#!/opt/xt/xt-perl/bin/perl
+#!/usr/bin/perl
 use Dancer;
 
 set('logger', 'console');
