@@ -28,7 +28,12 @@ Preparation
 * Install ```Task::Dancer``` (somewhat large) or install ```Dancer``` and ```Dancer::Template::TemplateToolkit```
 * Install ```Data::Types```
 * *Either* checkout a copy of this talk ```git clone git://github.com/andrewsolomon/YAPC2011DancingLesson.git``` 
-* *Or* download and untar https://github.com/andrewsolomon/YAPC2011DancingLesson/blob/master/YAPC2011DancingLesson.tar
+* *Or* download and untar/unzip from the 'Downloads' button https://github.com/andrewsolomon/YAPC2011DancingLesson
+* Open the slides with your browser:
+  README.www/README.md.html
+  README.www/part1.md.html
+  README.www/part2.md.html
+ 
 * Check that everything works:
 
 ```
